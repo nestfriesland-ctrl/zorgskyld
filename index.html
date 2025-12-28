@@ -269,98 +269,116 @@
 
     <section id="science" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 fade-in-up">
-                <div>
-                    <span class="text-medical-600 font-bold text-xs tracking-widest uppercase mb-2 block">De Formule</span>
-                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">De Recovery Stack</h2>
-                    <p class="text-slate-500 mt-3 max-w-xl text-lg">
-                        Skyld combineert de natuurlijke voordelen van schapenmelk met klinisch bewezen supplementen voor spierbehoud.
-                    </p>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                
+                <div class="fade-in-up">
+                    <div class="mb-10">
+                        <span class="text-medical-600 font-bold text-xs tracking-widest uppercase mb-2 block">De Formule</span>
+                        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">De Recovery Stack</h2>
+                        <p class="text-slate-500 mt-3 text-lg leading-relaxed">
+                            Skyld combineert de natuurlijke voordelen van schapenmelk met klinisch bewezen supplementen voor spierbehoud.
+                        </p>
+                    </div>
+
+                    <div class="overflow-hidden rounded-xl border border-slate-200 shadow-subtle">
+                        <table class="min-w-full divide-y divide-slate-200">
+                            <thead class="bg-slate-50">
+                                <tr>
+                                    <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Actief Ingrediënt</th>
+                                    <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider hidden sm:table-cell">Mechanisme</th>
+                                    <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Klinisch Doel</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-slate-200">
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="px-4 py-4 align-top">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-blue-50 text-blue-600 rounded-lg">
+                                                <i data-lucide="droplet" class="w-4 h-4 stroke-[1.5]"></i>
+                                            </div>
+                                            <div class="ml-3">
+                                                <div class="text-sm font-semibold text-slate-900">Schapenmelk</div>
+                                                <div class="text-xs text-slate-500">A2-eiwit</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4 hidden sm:table-cell align-top">
+                                        <span class="text-sm text-slate-600">Lichtere vertering & hogere bio-beschikbaarheid.</span>
+                                    </td>
+                                    <td class="px-4 py-4 align-top">
+                                        <span class="px-2.5 py-1 inline-flex text-[11px] leading-4 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                            Energie & Tolerantie
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="px-4 py-4 align-top">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-purple-50 text-purple-600 rounded-lg">
+                                                <i data-lucide="layers" class="w-4 h-4 stroke-[1.5]"></i>
+                                            </div>
+                                            <div class="ml-3">
+                                                <div class="text-sm font-semibold text-slate-900">HMB</div>
+                                                <div class="text-xs text-slate-500">Leucine metab.</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4 hidden sm:table-cell align-top">
+                                        <span class="text-sm text-slate-600">Remt eiwitafbraak en stimuleert synthese.</span>
+                                    </td>
+                                    <td class="px-4 py-4 align-top">
+                                        <span class="px-2.5 py-1 inline-flex text-[11px] leading-4 font-semibold rounded-full bg-purple-100 text-purple-800">
+                                            Anti-Spieratrofie
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="px-4 py-4 align-top">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-yellow-50 text-yellow-600 rounded-lg">
+                                                <i data-lucide="battery-charging" class="w-4 h-4 stroke-[1.5]"></i>
+                                            </div>
+                                            <div class="ml-3">
+                                                <div class="text-sm font-semibold text-slate-900">Creatine</div>
+                                                <div class="text-xs text-slate-500">Monohydraat</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-4 hidden sm:table-cell align-top">
+                                        <span class="text-sm text-slate-600">Ondersteunt cellulaire energie en cognitie.</span>
+                                    </td>
+                                    <td class="px-4 py-4 align-top">
+                                        <span class="px-2.5 py-1 inline-flex text-[11px] leading-4 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                            Fysieke Stabiliteit
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                     <div class="mt-6">
+                        <button class="text-sm font-medium text-slate-600 hover:text-medical-600 flex items-center gap-2 transition-colors">
+                            Bekijk klinische studies <i data-lucide="external-link" class="w-4 h-4 stroke-[1.5]"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="mt-6 md:mt-0">
-                    <button class="text-sm font-medium text-slate-600 hover:text-medical-600 flex items-center gap-2 transition-colors">
-                        Bekijk klinische studies <i data-lucide="external-link" class="w-4 h-4 stroke-[1.5]"></i>
-                    </button>
+
+                <div class="relative h-full min-h-[500px] rounded-2xl overflow-hidden shadow-float border border-slate-100 fade-in-up delay-100 lg:sticky lg:top-32">
+                     <img src="https://placehold.co/800x1000/e0f2fe/0284c7?text=Placeholder:+Oudere+dame+geniet+van+ijsje" alt="Patiënt geniet van Skyld" class="absolute inset-0 w-full h-full object-cover">
+                     
+                     <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent p-8">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white mb-3">
+                             <i data-lucide="smile" class="w-3 h-3"></i>
+                             <span class="text-[10px] font-bold tracking-widest uppercase">Genietmoment</span>
+                        </div>
+                        <p class="text-white text-lg font-medium leading-snug">"Het voelt niet als eten, maar als trakteren. Dit maakt mijn dag beter."</p>
+                     </div>
                 </div>
-            </div>
 
-            <div class="overflow-hidden rounded-xl border border-slate-200 shadow-subtle fade-in-up delay-100">
-                <table class="min-w-full divide-y divide-slate-200">
-                    <thead class="bg-slate-50">
-                        <tr>
-                            <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Actief Ingrediënt</th>
-                            <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider hidden md:table-cell">Werkingsmechanisme</th>
-                            <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Klinisch Doel</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-slate-200">
-                        <tr class="hover:bg-slate-50/50 transition-colors">
-                            <td class="px-6 py-6 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-10 w-10 flex items-center justify-center bg-blue-50 text-blue-600 rounded-lg">
-                                        <i data-lucide="droplet" class="w-5 h-5 stroke-[1.5]"></i>
-                                    </div>
-                                    <div class="ml-4">
-                                        <div class="text-sm font-semibold text-slate-900">Schapenmelk Basis</div>
-                                        <div class="text-xs text-slate-500">Van nature A2-eiwit</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-6 hidden md:table-cell">
-                                <span class="text-sm text-slate-600">Lichtere vertering & hogere biologische beschikbaarheid dan koemelk.</span>
-                            </td>
-                            <td class="px-6 py-6 whitespace-nowrap">
-                                <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
-                                    Energie & Verdraagzaamheid
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-slate-50/50 transition-colors">
-                            <td class="px-6 py-6 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-10 w-10 flex items-center justify-center bg-purple-50 text-purple-600 rounded-lg">
-                                        <i data-lucide="layers" class="w-5 h-5 stroke-[1.5]"></i>
-                                    </div>
-                                    <div class="ml-4">
-                                        <div class="text-sm font-semibold text-slate-900">HMB</div>
-                                        <div class="text-xs text-slate-500">Metaboliet van Leucine</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-6 hidden md:table-cell">
-                                <span class="text-sm text-slate-600">Remt eiwitafbraak (anti-katabool) en stimuleert eiwitsynthese.</span>
-                            </td>
-                            <td class="px-6 py-6 whitespace-nowrap">
-                                <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800">
-                                    Preventie Spieratrofie
-                                </span>
-                            </td>
-                        </tr>
-
-                        <tr class="hover:bg-slate-50/50 transition-colors">
-                            <td class="px-6 py-6 whitespace-nowrap">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-10 w-10 flex items-center justify-center bg-yellow-50 text-yellow-600 rounded-lg">
-                                        <i data-lucide="battery-charging" class="w-5 h-5 stroke-[1.5]"></i>
-                                    </div>
-                                    <div class="ml-4">
-                                        <div class="text-sm font-semibold text-slate-900">Creatine</div>
-                                        <div class="text-xs text-slate-500">Monohydraat</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-6 hidden md:table-cell">
-                                <span class="text-sm text-slate-600">Ondersteunt cellulaire energievoorziening en cognitieve functie.</span>
-                            </td>
-                            <td class="px-6 py-6 whitespace-nowrap">
-                                <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                                    Fysieke Stabiliteit
-                                </span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </section>
