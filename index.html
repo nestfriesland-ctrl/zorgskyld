@@ -20,25 +20,31 @@
                     },
                     colors: {
                         medical: {
-                            50: '#f0f9ff',
+                            50: '#f0f9ff', // Very light blue bg
                             100: '#e0f2fe',
                             500: '#0ea5e9',
-                            600: '#0284c7', // Primary Trust Blue
+                            600: '#0284c7', // Primary Brand Color
                             700: '#0369a1',
                             900: '#0c4a6e',
                         },
                         human: {
-                            50: '#fff7ed',
-                            100: '#ffedd5',
-                            500: '#f97316', // Action Orange (Conversion)
+                            500: '#f97316', // Action Orange
                             600: '#ea580c',
+                        },
+                        aura: {
+                            blue: '#eff6ff',    // Icon BG Blue
+                            purple: '#f5f3ff',  // Icon BG Purple
+                            yellow: '#fefce8',  // Icon BG Yellow
+                            orange: '#fff7ed',  // Icon BG Orange
+                            gray: '#f8fafc',    // Icon BG Gray
+                            green: '#f0fdf4',   // Success BG
+                            greenText: '#15803d'
                         }
                     },
                     boxShadow: {
-                        'subtle': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+                        'aura': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)', // Very subtle
+                        'aura-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025)',
                         'float': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02)',
-                        'deep': '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
-                        'glow': '0 0 20px rgba(14, 165, 233, 0.3)',
                     },
                     animation: {
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -49,11 +55,20 @@
     </script>
 
     <style>
-        body { background-color: #ffffff; color: #0f172a; }
+        body { background-color: #fcfcfc; color: #0f172a; } /* Slightly off-white background for AURA feel */
         .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-in-up.visible { opacity: 1; transform: translateY(0); }
-        .bg-grid { background-size: 40px 40px; background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px); }
-        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); }
+        
+        /* AURA Glass Effect */
+        .glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(226, 232, 240, 0.6); }
+        
+        /* AURA Card Base */
+        .aura-card {
+            background-color: white;
+            border: 1px solid #f1f5f9;
+            border-radius: 1rem; /* rounded-2xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+        }
     </style>
 </head>
 <body class="selection:bg-medical-100 selection:text-medical-900">
@@ -61,7 +76,7 @@
     <nav class="fixed top-0 w-full z-50 glass transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3 group cursor-pointer">
-                <div class="w-9 h-9 bg-gradient-to-br from-medical-50 to-white rounded-lg flex items-center justify-center border border-medical-100 shadow-sm">
+                <div class="w-9 h-9 bg-gradient-to-br from-medical-50 to-white rounded-xl flex items-center justify-center border border-medical-100 shadow-sm">
                     <i data-lucide="shield-check" class="text-medical-600 w-5 h-5 stroke-[2]"></i>
                 </div>
                 <div class="flex flex-col">
@@ -85,21 +100,19 @@
     </nav>
 
     <header class="relative pt-32 pb-32 lg:pt-48 lg:pb-40 overflow-hidden bg-white">
-        <div class="absolute inset-0 bg-grid opacity-[0.3] z-[-1]"></div>
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-medical-50/80 rounded-full blur-[100px] z-[-1]"></div>
-        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-human-50/60 rounded-full blur-[80px] z-[-1]"></div>
-
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-medical-50/60 rounded-full blur-[120px] z-[-1]"></div>
+        
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
             <div class="space-y-8 fade-in-up">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-medical-100 shadow-subtle text-medical-700">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-medical-100 shadow-sm text-medical-700">
                     <span class="relative flex h-2 w-2">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-medical-500 opacity-75"></span>
                       <span class="relative inline-flex rounded-full h-2 w-2 bg-medical-600"></span>
                     </span>
-                    <span class="text-[11px] uppercase tracking-widest font-bold">Nieuwe Standaard in Klinische Voeding</span>
+                    <span class="text-[11px] uppercase tracking-widest font-bold">Nieuwe Standaard in Herstel</span>
                 </div>
 
-                <h1 class="text-5xl lg:text-7xl font-bold text-slate-900 tracking-tight leading-[1.1]">
+                <h1 class="text-5xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
                     Herstel begint bij <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-medical-600 to-cyan-500">smaakbeleving.</span>
                 </h1>
@@ -109,102 +122,107 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                    <button class="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white transition-all bg-medical-600 rounded-lg hover:bg-medical-700 shadow-lg shadow-medical-500/20 group">
+                    <button class="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white transition-all bg-medical-600 rounded-xl hover:bg-medical-700 shadow-lg shadow-medical-500/20 hover:-translate-y-0.5 group">
                         Informatie voor Diëtisten
                         <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1 stroke-[2]"></i>
                     </button>
-                    <button class="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-slate-700 transition-all bg-white border border-slate-200 rounded-lg hover:bg-slate-50 hover:border-slate-300">
+                    <button class="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-slate-700 transition-all bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:border-slate-300">
                         <i data-lucide="file-text" class="mr-2 w-4 h-4 text-slate-400"></i>
                         Factsheet (PDF)
                     </button>
                 </div>
 
-                <div class="flex items-center gap-6 text-xs text-slate-500 font-medium pt-8 border-t border-slate-200/60">
+                <div class="flex items-center gap-6 text-xs text-slate-500 font-medium pt-8 border-t border-slate-100">
                     <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 stroke-[2]"></i>
+                        <div class="bg-green-100 p-1 rounded-full text-green-600"><i data-lucide="check" class="w-3 h-3 stroke-[3]"></i></div>
                         <span>Medisch Onderbouwd</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 stroke-[2]"></i>
+                        <div class="bg-green-100 p-1 rounded-full text-green-600"><i data-lucide="check" class="w-3 h-3 stroke-[3]"></i></div>
                         <span>Hoge Compliance (92%)</span>
                     </div>
                 </div>
             </div>
 
             <div class="relative fade-in-up delay-100">
-                <div class="relative z-10 bg-white rounded-2xl shadow-deep border border-slate-200 p-8 max-w-md mx-auto transform transition-transform hover:-translate-y-2 duration-500 ring-1 ring-slate-900/5">
-                    <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-medical-500 to-human-500 rounded-t-2xl"></div>
-                    
-                    <div class="flex justify-between items-start mb-8 mt-2">
+                <div class="relative z-10 bg-white rounded-3xl shadow-float border border-slate-100 p-8 max-w-md mx-auto transform transition-transform hover:-translate-y-2 duration-500">
+                    <div class="flex justify-between items-start mb-8">
                         <div>
-                            <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight">Medisch IJs-Supplement</h3>
-                            <p class="text-sm text-slate-500 mt-1 font-medium">Aansterken middels dieet (80g / 100ml)</p>
+                            <h3 class="text-2xl font-bold text-slate-900 tracking-tight">Klinisch Profiel</h3>
+                            <p class="text-sm text-slate-500 mt-1">Per eenheid (125ml)</p>
                         </div>
-                        <div class="w-12 h-12 bg-medical-50 rounded-xl flex items-center justify-center border border-medical-100">
-                            <i data-lucide="shield-check" class="w-6 h-6 text-medical-600 stroke-[2]"></i>
+                        <div class="w-12 h-12 bg-aura-blue rounded-2xl flex items-center justify-center text-medical-600">
+                            <i data-lucide="microscope" class="w-6 h-6 stroke-[1.5]"></i>
                         </div>
                     </div>
                     
                     <div class="space-y-4">
-                        <div class="flex items-center justify-between p-4 rounded-xl bg-slate-50 border border-slate-100">
+                        
+                        <div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 border border-slate-100/50">
                             <div class="flex items-center gap-4">
-                                <div class="p-2 bg-blue-50 rounded-lg text-blue-600"><i data-lucide="dna" class="w-5 h-5 stroke-[2]"></i></div>
-                                <span class="text-sm font-semibold text-slate-700">Eiwitten (Aminozuren)</span>
+                                <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-medical-600 shadow-sm border border-slate-100">
+                                    <i data-lucide="dna" class="w-5 h-5 stroke-[1.5]"></i>
+                                </div>
+                                <span class="text-sm font-medium text-slate-700">Eiwitten (Aminozuren)</span>
                             </div>
                             <span class="text-base font-bold text-slate-900">10g</span>
                         </div>
                         
-                        <div class="flex items-center justify-between p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+                        <div class="flex items-center justify-between p-3 rounded-2xl bg-white border border-slate-100">
                             <div class="flex items-center gap-4">
-                                <div class="p-2 bg-purple-50 rounded-lg text-purple-600"><i data-lucide="shield" class="w-5 h-5 stroke-[2]"></i></div>
+                                <div class="w-10 h-10 bg-aura-purple rounded-xl flex items-center justify-center text-purple-600">
+                                    <i data-lucide="shield" class="w-5 h-5 stroke-[1.5]"></i>
+                                </div>
                                 <span class="text-sm font-medium text-slate-600">HMB</span>
                             </div>
-                            <span class="text-sm font-bold text-slate-700">1000mg</span>
+                            <span class="text-sm font-bold text-slate-900">1000mg</span>
                         </div>
 
-                        <div class="flex items-center justify-between p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+                        <div class="flex items-center justify-between p-3 rounded-2xl bg-white border border-slate-100">
                             <div class="flex items-center gap-4">
-                                <div class="p-2 bg-yellow-50 rounded-lg text-yellow-600"><i data-lucide="battery-charging" class="w-5 h-5 stroke-[2]"></i></div>
+                                <div class="w-10 h-10 bg-aura-yellow rounded-xl flex items-center justify-center text-yellow-600">
+                                    <i data-lucide="battery-charging" class="w-5 h-5 stroke-[1.5]"></i>
+                                </div>
                                 <span class="text-sm font-medium text-slate-600">Creatine</span>
                             </div>
-                            <span class="text-sm font-bold text-slate-700">3g</span>
+                            <span class="text-sm font-bold text-slate-900">3g</span>
                         </div>
 
-                         <div class="flex items-center justify-between p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+                         <div class="flex items-center justify-between p-3 rounded-2xl bg-white border border-slate-100">
                             <div class="flex items-center gap-4">
-                                <div class="p-2 bg-orange-50 rounded-lg text-orange-600"><i data-lucide="sun" class="w-5 h-5 stroke-[2]"></i></div>
-                                <span class="text-sm font-medium text-slate-600">Vitaminen & Mineralen</span>
+                                <div class="w-10 h-10 bg-aura-orange rounded-xl flex items-center justify-center text-orange-500">
+                                    <i data-lucide="sun" class="w-5 h-5 stroke-[1.5]"></i>
+                                </div>
+                                <span class="text-sm font-medium text-slate-600">Vitamine D3</span>
                             </div>
-                            <span class="text-sm font-bold text-slate-700">D, K, E, Mg</span>
+                            <span class="text-sm font-bold text-slate-900">50% ADH</span>
                         </div>
                     </div>
 
-                    <div class="mt-8 pt-6 border-t border-slate-100 text-center">
-                         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold tracking-widest uppercase border border-emerald-100">
-                            <i data-lucide="check" class="w-3.5 h-3.5"></i> Licht Verteerbaar (A2)
+                    <div class="mt-8 pt-6 border-t border-slate-100 flex justify-center">
+                         <span class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-aura-green border border-emerald-200 text-emerald-700 text-xs font-bold tracking-widest uppercase">
+                            <i data-lucide="check" class="w-3.5 h-3.5 stroke-[3]"></i> Licht Verteerbaar (A2)
                          </span>
                     </div>
                 </div>
+                
                 <div class="absolute -top-12 -right-12 w-32 h-32 bg-human-100 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse-slow"></div>
                 <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-medical-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse-slow delay-100"></div>
             </div>
         </div>
-        
-        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-slate-50/80 pointer-events-none"></div>
     </header>
 
-    <section id="problem" class="py-24 bg-slate-50 border-b border-slate-200">
+    <section id="problem" class="py-24 bg-slate-50 border-y border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-16 fade-in-up">
-                <span class="text-red-500 font-bold text-xs tracking-widest uppercase mb-2 block">De urgentie</span>
                 <h2 class="text-3xl font-bold text-slate-900 tracking-tight mb-4">De stille crisis in de zorg</h2>
-                <p class="text-slate-600 text-lg">Ondervoeding kost de Nederlandse zorgsector jaarlijks naar schatting <strong>€1,8 miljard</strong>. Huidige supplementen stuiten vaak op weerstand door smaak en textuur, wat leidt tot verspilling en langzamer herstel.</p>
+                <p class="text-slate-600 text-lg">Ondervoeding kost de Nederlandse zorgsector jaarlijks naar schatting <strong>€1,8 miljard</strong>. Huidige supplementen stuiten vaak op weerstand door smaak en textuur.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all fade-in-up delay-100">
-                    <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-6">
-                        <i data-lucide="trending-down" class="w-6 h-6 text-red-500 stroke-[1.5]"></i>
+                <div class="aura-card p-8 hover:shadow-aura-hover transition-shadow fade-in-up delay-100">
+                    <div class="w-12 h-12 bg-red-50 rounded-2xl flex items-center justify-center mb-6 text-red-500">
+                        <i data-lucide="trending-down" class="w-6 h-6 stroke-[1.5]"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">Spieratrofie & Sarcopenie</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">
@@ -212,9 +230,9 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all fade-in-up delay-200">
-                    <div class="w-12 h-12 bg-human-50 rounded-lg flex items-center justify-center mb-6">
-                        <i data-lucide="alert-circle" class="w-6 h-6 text-human-500 stroke-[1.5]"></i>
+                <div class="aura-card p-8 hover:shadow-aura-hover transition-shadow fade-in-up delay-200">
+                    <div class="w-12 h-12 bg-human-50 rounded-2xl flex items-center justify-center mb-6 text-human-500">
+                        <i data-lucide="alert-circle" class="w-6 h-6 stroke-[1.5]"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">Malnutritie</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">
@@ -222,9 +240,9 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all fade-in-up">
-                    <div class="w-12 h-12 bg-medical-50 rounded-lg flex items-center justify-center mb-6">
-                        <i data-lucide="thumbs-up" class="w-6 h-6 text-medical-600 stroke-[1.5]"></i>
+                <div class="aura-card p-8 hover:shadow-aura-hover transition-shadow fade-in-up">
+                    <div class="w-12 h-12 bg-medical-50 rounded-2xl flex items-center justify-center mb-6 text-medical-600">
+                        <i data-lucide="thumbs-up" class="w-6 h-6 stroke-[1.5]"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">Compliance Problematiek</h3>
                     <p class="text-sm text-slate-500 leading-relaxed">
@@ -237,86 +255,104 @@
 
     <section id="science" class="py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div class="grid lg:grid-cols-2 gap-20 items-start">
                 
                 <div class="fade-in-up">
-                    <div class="mb-8">
+                    <div class="mb-10">
                         <span class="text-medical-600 font-bold text-xs tracking-widest uppercase mb-2 block">De Formule</span>
                         <h2 class="text-3xl font-bold text-slate-900 tracking-tight">De Recovery Stack</h2>
                         <p class="text-slate-500 mt-3 text-lg leading-relaxed">
                             Skyld combineert de natuurlijke voordelen van schapenmelk met 9 klinisch bewezen supplementen voor spierbehoud.
                         </p>
                         <div class="mt-4 flex gap-3">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-medium">Glutenvrij</span>
-                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-medium">Sojavrij</span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-600 text-xs font-medium">Glutenvrij</span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-50 border border-slate-200 text-slate-600 text-xs font-medium">Sojavrij</span>
                         </div>
                     </div>
 
-                    <div class="overflow-hidden rounded-xl border border-slate-200 shadow-subtle">
-                        <table class="min-w-full divide-y divide-slate-200">
-                            <thead class="bg-slate-50">
-                                <tr>
-                                    <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Actief Ingrediënt</th>
-                                    <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider hidden sm:table-cell">Mechanisme</th>
-                                    <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Klinisch Doel</th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white divide-y divide-slate-200">
-                                <tr class="hover:bg-slate-50/50 transition-colors">
-                                    <td class="px-4 py-4 align-top">
-                                        <div class="flex items-center"><div class="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-blue-50 text-blue-600 rounded-lg"><i data-lucide="droplet" class="w-4 h-4 stroke-[1.5]"></i></div><div class="ml-3"><div class="text-sm font-semibold text-slate-900">Schapenmelk</div><div class="text-xs text-slate-500">A2-eiwit</div></div></div>
-                                    </td>
-                                    <td class="px-4 py-4 hidden sm:table-cell align-top"><span class="text-sm text-slate-600">Lichtere vertering & hogere bio-beschikbaarheid.</span></td>
-                                    <td class="px-4 py-4 align-top"><span class="px-2.5 py-1 inline-flex text-[11px] leading-4 font-semibold rounded-full bg-blue-100 text-blue-800">Energie & Tolerantie</span></td>
-                                </tr>
-                                <tr class="hover:bg-slate-50/50 transition-colors">
-                                    <td class="px-4 py-4 align-top">
-                                        <div class="flex items-center"><div class="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-purple-50 text-purple-600 rounded-lg"><i data-lucide="layers" class="w-4 h-4 stroke-[1.5]"></i></div><div class="ml-3"><div class="text-sm font-semibold text-slate-900">HMB</div><div class="text-xs text-slate-500">Leucine metab.</div></div></div>
-                                    </td>
-                                    <td class="px-4 py-4 hidden sm:table-cell align-top"><span class="text-sm text-slate-600">Remt eiwitafbraak en stimuleert synthese.</span></td>
-                                    <td class="px-4 py-4 align-top"><span class="px-2.5 py-1 inline-flex text-[11px] leading-4 font-semibold rounded-full bg-purple-100 text-purple-800">Anti-Spieratrofie</span></td>
-                                </tr>
-                                <tr class="hover:bg-slate-50/50 transition-colors">
-                                    <td class="px-4 py-4 align-top">
-                                        <div class="flex items-center"><div class="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-yellow-50 text-yellow-600 rounded-lg"><i data-lucide="battery-charging" class="w-4 h-4 stroke-[1.5]"></i></div><div class="ml-3"><div class="text-sm font-semibold text-slate-900">Creatine</div><div class="text-xs text-slate-500">Monohydraat</div></div></div>
-                                    </td>
-                                    <td class="px-4 py-4 hidden sm:table-cell align-top"><span class="text-sm text-slate-600">Ondersteunt cellulaire energie en cognitie.</span></td>
-                                    <td class="px-4 py-4 align-top"><span class="px-2.5 py-1 inline-flex text-[11px] leading-4 font-semibold rounded-full bg-yellow-100 text-yellow-800">Fysieke Stabiliteit</span></td>
-                                </tr>
-                                <tr class="hover:bg-slate-50/50 transition-colors">
-                                    <td class="px-4 py-4 align-top">
-                                        <div class="flex items-center"><div class="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-orange-50 text-orange-600 rounded-lg"><i data-lucide="sun" class="w-4 h-4 stroke-[1.5]"></i></div><div class="ml-3"><div class="text-sm font-semibold text-slate-900">Vitamine D, K, E</div><div class="text-xs text-slate-500">Vetoplosbaar</div></div></div>
-                                    </td>
-                                    <td class="px-4 py-4 hidden sm:table-cell align-top"><span class="text-sm text-slate-600">Essentieel voor botdichtheid en antioxidatieve bescherming.</span></td>
-                                    <td class="px-4 py-4 align-top"><span class="px-2.5 py-1 inline-flex text-[11px] leading-4 font-semibold rounded-full bg-orange-100 text-orange-800">Botten & Weerstand</span></td>
-                                </tr>
-                                <tr class="hover:bg-slate-50/50 transition-colors">
-                                    <td class="px-4 py-4 align-top">
-                                        <div class="flex items-center"><div class="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-slate-100 text-slate-600 rounded-lg"><i data-lucide="zap" class="w-4 h-4 stroke-[1.5]"></i></div><div class="ml-3"><div class="text-sm font-semibold text-slate-900">Magnesium</div><div class="text-xs text-slate-500">Mineraal</div></div></div>
-                                    </td>
-                                    <td class="px-4 py-4 hidden sm:table-cell align-top"><span class="text-sm text-slate-600">Ondersteunt spiercontractie en eiwitsynthese.</span></td>
-                                    <td class="px-4 py-4 align-top"><span class="px-2.5 py-1 inline-flex text-[11px] leading-4 font-semibold rounded-full bg-slate-200 text-slate-800">Spierfunctie</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="space-y-4">
+                        <div class="aura-card p-4 flex items-center justify-between hover:border-medical-200 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-aura-blue rounded-2xl flex items-center justify-center text-medical-600 flex-shrink-0">
+                                    <i data-lucide="droplet" class="w-6 h-6 stroke-[1.5]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Schapenmelk</h4>
+                                    <p class="text-xs text-slate-500">A2-eiwit basis</p>
+                                </div>
+                            </div>
+                            <span class="hidden sm:inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold">Energie & Tolerantie</span>
+                        </div>
+
+                        <div class="aura-card p-4 flex items-center justify-between hover:border-purple-200 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-aura-purple rounded-2xl flex items-center justify-center text-purple-600 flex-shrink-0">
+                                    <i data-lucide="layers" class="w-6 h-6 stroke-[1.5]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">HMB</h4>
+                                    <p class="text-xs text-slate-500">Leucine metaboliet</p>
+                                </div>
+                            </div>
+                            <span class="hidden sm:inline-block px-3 py-1 rounded-full bg-purple-50 text-purple-700 text-xs font-bold">Anti-Spieratrofie</span>
+                        </div>
+
+                        <div class="aura-card p-4 flex items-center justify-between hover:border-yellow-200 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-aura-yellow rounded-2xl flex items-center justify-center text-yellow-600 flex-shrink-0">
+                                    <i data-lucide="battery-charging" class="w-6 h-6 stroke-[1.5]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Creatine</h4>
+                                    <p class="text-xs text-slate-500">Monohydraat</p>
+                                </div>
+                            </div>
+                            <span class="hidden sm:inline-block px-3 py-1 rounded-full bg-yellow-50 text-yellow-700 text-xs font-bold">Fysieke Stabiliteit</span>
+                        </div>
+
+                        <div class="aura-card p-4 flex items-center justify-between hover:border-orange-200 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-aura-orange rounded-2xl flex items-center justify-center text-orange-500 flex-shrink-0">
+                                    <i data-lucide="sun" class="w-6 h-6 stroke-[1.5]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Vitamine D, K, E</h4>
+                                    <p class="text-xs text-slate-500">Vetoplosbaar</p>
+                                </div>
+                            </div>
+                            <span class="hidden sm:inline-block px-3 py-1 rounded-full bg-orange-50 text-orange-700 text-xs font-bold">Botten & Weerstand</span>
+                        </div>
+
+                        <div class="aura-card p-4 flex items-center justify-between hover:border-slate-300 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-aura-gray rounded-2xl flex items-center justify-center text-slate-600 flex-shrink-0">
+                                    <i data-lucide="zap" class="w-6 h-6 stroke-[1.5]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Magnesium</h4>
+                                    <p class="text-xs text-slate-500">Mineraal</p>
+                                </div>
+                            </div>
+                            <span class="hidden sm:inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold">Spierfunctie</span>
+                        </div>
                     </div>
                     
-                     <div class="mt-6">
-                        <button class="text-sm font-medium text-slate-600 hover:text-medical-600 flex items-center gap-2 transition-colors">
+                     <div class="mt-8">
+                        <button class="text-sm font-medium text-slate-500 hover:text-medical-600 flex items-center gap-2 transition-colors">
                             Bekijk klinische studies <i data-lucide="external-link" class="w-4 h-4 stroke-[1.5]"></i>
                         </button>
                     </div>
                 </div>
 
-                <div class="relative h-full min-h-[500px] rounded-2xl overflow-hidden shadow-float border border-slate-100 fade-in-up delay-100 lg:sticky lg:top-32 bg-slate-50 flex items-center justify-center">
+                <div class="relative h-full min-h-[600px] rounded-3xl overflow-hidden shadow-float border border-slate-100 fade-in-up delay-100 lg:sticky lg:top-32 bg-slate-50 flex items-center justify-center">
                      <img src="https://placehold.co/800x1000/f0f9ff/0284c7?text=PRODUCT+SHOT:+Grote+Cup+SKYLD" alt="SKYLD Medical IJs Cup" class="absolute inset-0 w-full h-full object-cover">
-                     <div class="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur rounded-xl p-4 shadow-sm border border-slate-200">
+                     <div class="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur rounded-2xl p-5 shadow-aura border border-slate-100">
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-sm font-bold text-slate-900">SKYLD Medical</p>
                                 <p class="text-xs text-slate-500">125ml • 10g Eiwit</p>
                             </div>
-                            <span class="bg-medical-100 text-medical-700 text-xs font-bold px-2 py-1 rounded">Vanille</span>
+                            <span class="bg-medical-50 text-medical-700 text-xs font-bold px-3 py-1 rounded-lg border border-medical-100">Vanille</span>
                         </div>
                      </div>
                 </div>
@@ -331,7 +367,7 @@
             
             <div class="grid md:grid-cols-3 gap-8">
                 
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between">
+                <div class="aura-card p-8 flex flex-col justify-between">
                     <div>
                         <div class="flex gap-1 text-medical-500 mb-4">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -349,7 +385,7 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between">
+                <div class="aura-card p-8 flex flex-col justify-between">
                     <div>
                         <div class="flex gap-1 text-medical-500 mb-4">
                             <i data-lucide="quote" class="w-4 h-4 fill-current"></i>
@@ -367,7 +403,7 @@
                     </div>
                 </div>
 
-                <div class="bg-slate-100 p-8 rounded-2xl border border-slate-200 shadow-inner flex flex-col justify-center text-center">
+                <div class="bg-slate-100 p-8 rounded-3xl border border-slate-200 shadow-inner flex flex-col justify-center text-center">
                     <h4 class="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6">Reeds in gebruik bij</h4>
                     <div class="space-y-6 opacity-60 grayscale">
                         <div class="flex items-center justify-center gap-2 font-bold text-slate-600 text-lg"><i data-lucide="building-2" class="w-6 h-6"></i> ZorgGroep Noord</div>
@@ -387,12 +423,12 @@
                     <span class="text-medical-600 font-bold text-xs tracking-widest uppercase mb-2 block">Inkoop & Logistiek</span>
                     <h2 class="text-3xl font-bold text-slate-900 tracking-tight mb-6">Schaalbaar voor elke zorginstelling</h2>
                     <p class="text-slate-500 text-lg mb-8 leading-relaxed">
-                        SKYLD wordt diepgevroren geleverd. <strong>Geen aanpassing in uw logistiek nodig</strong>: past in standaard vrieslogistiek en regenereerwagens zijn niet vereist.
+                        SKYLD wordt diepgevroren geleverd en is eenvoudig te integreren in uw huidige voedingslogistiek. Wij werken met staffelprijzen voor volume-afname.
                     </p>
                     
                     <div class="space-y-6">
                         <div class="flex gap-4">
-                            <div class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center flex-shrink-0 text-medical-600">
+                            <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center flex-shrink-0 text-medical-600 border border-slate-100">
                                 <i data-lucide="package" class="w-6 h-6 stroke-[1.5]"></i>
                             </div>
                             <div>
@@ -401,18 +437,18 @@
                             </div>
                         </div>
                         <div class="flex gap-4">
-                            <div class="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center flex-shrink-0 text-medical-600">
-                                <i data-lucide="snowflake" class="w-6 h-6 stroke-[1.5]"></i>
+                            <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center flex-shrink-0 text-medical-600 border border-slate-100">
+                                <i data-lucide="truck" class="w-6 h-6 stroke-[1.5]"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-slate-900">Naadloze Integratie</h4>
-                                <p class="text-sm text-slate-500 mt-1">Past in de bestaande brood- en toetjesronde. Geen bereidingstijd voor personeel.</p>
+                                <h4 class="font-bold text-slate-900">Levering</h4>
+                                <p class="text-sm text-slate-500 mt-1">Vriesvers transport. Levering mogelijk op locatie of centraal distributiepunt.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-medical-50 rounded-2xl p-8 border border-medical-100 shadow-lg relative">
+                <div class="bg-medical-50 rounded-3xl p-8 border border-medical-100 shadow-lg relative">
                     <div class="absolute top-0 right-0 bg-medical-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">B2B Tarief</div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">Inkooptarieven</h3>
                     <p class="text-sm text-slate-500 mb-6">Exclusief voor zorgprofessionals en inkopers.</p>
@@ -432,8 +468,8 @@
                         </div>
                     </div>
 
-                    <button class="w-full py-3 bg-medical-600 hover:bg-medical-700 text-white rounded-lg text-sm font-bold transition-colors shadow-md flex items-center justify-center gap-2">
-                        <i data-lucide="file-text" class="w-4 h-4"></i> Vraag Actuele Tarieven Aan
+                    <button class="w-full py-3 bg-medical-600 hover:bg-medical-700 text-white rounded-xl text-sm font-bold transition-colors shadow-md flex items-center justify-center gap-2">
+                        <i data-lucide="file-text" class="w-4 h-4"></i> Vraag Prijslijst 2024 Aan
                     </button>
                     <p class="text-xs text-center text-slate-400 mt-3">Direct contact? Bel 0513-241124</p>
                 </div>
@@ -455,7 +491,7 @@
 
                     <ul class="space-y-8">
                         <li class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-medical-500/20 flex items-center justify-center border border-medical-500/30 flex-shrink-0">
+                            <div class="w-10 h-10 rounded-2xl bg-medical-500/20 flex items-center justify-center border border-medical-500/30 flex-shrink-0">
                                 <i data-lucide="pie-chart" class="w-5 h-5 text-medical-400 stroke-[1.5]"></i>
                             </div>
                             <div>
@@ -464,7 +500,7 @@
                             </div>
                         </li>
                         <li class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-medical-500/20 flex items-center justify-center border border-medical-500/30 flex-shrink-0">
+                            <div class="w-10 h-10 rounded-2xl bg-medical-500/20 flex items-center justify-center border border-medical-500/30 flex-shrink-0">
                                 <i data-lucide="clock" class="w-5 h-5 text-medical-400 stroke-[1.5]"></i>
                             </div>
                             <div>
@@ -475,10 +511,10 @@
                     </ul>
                 </div>
 
-                <div class="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl border border-slate-700 fade-in-up delay-100 group">
+                <div class="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl border border-slate-700 fade-in-up delay-100 group">
                     <img src="assets/oudevrouw.jpg" alt="Genieten van Skyld in de zorg" class="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity duration-500">
                     
-                    <div class="absolute top-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-lg max-w-xs transform group-hover:-translate-y-1 transition-transform">
+                    <div class="absolute top-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl shadow-lg max-w-xs transform group-hover:-translate-y-1 transition-transform">
                         <div class="flex items-center gap-3 mb-2">
                             <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white"><i data-lucide="trending-up" class="w-4 h-4"></i></div>
                             <span class="text-xs font-bold text-white uppercase tracking-wider">ROI Potentieel</span>
@@ -501,7 +537,7 @@
             <div class="grid md:grid-cols-4 gap-12 mb-16">
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center gap-2 mb-6">
-                        <div class="w-8 h-8 bg-white rounded flex items-center justify-center">
+                        <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
                             <i data-lucide="shield-check" class="text-slate-900 w-5 h-5 stroke-[2]"></i>
                         </div>
                         <span class="font-bold text-white tracking-tight text-lg">SKYLD MEDICAL</span>
