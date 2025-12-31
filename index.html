@@ -2,493 +2,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SKYLD Medical - Hoogcalorische klinische voeding op basis van schapenmelk voor preventie van sarcopenie.">
-    <title>SKYLD Medical | Klinische Voeding & Herstel</title>
+    <meta name="description" content="SKYLD Medical - Eiwitrijke klinische voeding op basis van schapenmelk. Ontwikkeld door internisten.">
+    <title>SKYLD Medical | De Nieuwe Standaard</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script src="https://unpkg.com/lucide@latest"></script>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        medical: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0ea5e9',
-                            600: '#0284c7', // Primary Trust Blue
-                            700: '#0369a1',
-                            900: '#0c4a6e',
+                        brand: {
+                            black: '#0f172a', 
+                            blue: '#0284c7', 
+                            light: '#f8fafc',
                         },
-                        human: {
-                            50: '#fff7ed',
-                            100: '#ffedd5',
-                            500: '#f97316', // Warmth accent (Care)
-                        }
+                        human: { orange: '#f97316' }
                     },
                     boxShadow: {
-                        'subtle': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-                        'float': '0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02)',
-                        'glow': '0 0 20px rgba(14, 165, 233, 0.3)',
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'aura': '0 20px 40px -10px rgba(2, 132, 199, 0.15)',
                     }
                 }
             }
         }
     </script>
-
     <style>
         body { background-color: #ffffff; color: #0f172a; }
-        
-        /* Smooth Fade In Animation Classes */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .delay-100 { transition-delay: 0.1s; }
-        .delay-200 { transition-delay: 0.2s; }
-        
-        /* Custom UI Elements */
-        .toggle-checkbox:checked {
-            right: 0;
-            border-color: #0284c7;
-        }
-        .toggle-checkbox:checked + .toggle-label {
-            background-color: #0284c7;
-        }
-        
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
-        }
-        
-        .glass {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
-        }
+        .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+        .bg-mesh { background-image: radial-gradient(at 0% 0%, rgba(2, 132, 199, 0.05) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(249, 115, 22, 0.05) 0px, transparent 50%); }
     </style>
 </head>
-<body class="selection:bg-medical-100 selection:text-medical-900">
+<body class="selection:bg-brand-blue selection:text-white">
 
-    <nav class="fixed top-0 w-full z-50 glass transition-all duration-300">
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3 group cursor-pointer">
-                <div class="w-9 h-9 bg-gradient-to-br from-medical-50 to-white rounded-lg flex items-center justify-center border border-medical-100 shadow-sm">
-                    <i data-lucide="shield-check" class="text-medical-600 w-5 h-5 stroke-[2]"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-bold text-slate-900 tracking-tight text-lg leading-none">SKYLD</span>
-                    <span class="text-[10px] uppercase tracking-widest text-medical-600 font-semibold leading-none mt-0.5">Medical</span>
-                </div>
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center text-white"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+                <span class="font-black text-xl tracking-tight text-slate-900">SKYLD</span>
             </div>
-
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#problem" class="text-sm font-medium text-slate-600 hover:text-medical-600 transition-colors">Indicaties</a>
-                <a href="#science" class="text-sm font-medium text-slate-600 hover:text-medical-600 transition-colors">Samenstelling</a>
-                <a href="#management" class="text-sm font-medium text-slate-600 hover:text-medical-600 transition-colors">Business Case</a>
+            <div class="hidden md:flex gap-8 text-sm font-bold text-slate-500">
+                <a href="#comparison" class="hover:text-brand-blue transition-colors">Waarom SKYLD?</a>
+                <a href="#science" class="hover:text-brand-blue transition-colors">Wetenschap</a>
+                <a href="#pricing" class="hover:text-brand-blue transition-colors">Zakelijk</a>
             </div>
-
-            <div class="flex items-center gap-4">
-                <a href="#contact" class="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wide text-white transition-all duration-200 bg-slate-900 rounded-full hover:bg-medical-600 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-medical-600">
-                    Vraag Proefpakket
-                </a>
-                <button class="md:hidden text-slate-600">
-                    <i data-lucide="menu" class="w-6 h-6 stroke-[1.5]"></i>
-                </button>
-            </div>
+            <a href="#contact" class="px-6 py-2.5 bg-brand-blue text-white text-xs font-bold rounded-full hover:bg-sky-700 transition-all shadow-lg hover:shadow-sky-200">Vraag Proefpakket</a>
         </div>
     </nav>
 
-    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="absolute inset-0 bg-grid opacity-[0.3] z-[-1]"></div>
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-medical-50/80 rounded-full blur-[100px] z-[-1]"></div>
-        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-human-50/60 rounded-full blur-[80px] z-[-1]"></div>
-
+    <header class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-mesh">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8 fade-in-up">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-medical-100 shadow-subtle text-medical-700">
-                    <span class="relative flex h-2 w-2">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-medical-500 opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-2 w-2 bg-medical-600"></span>
-                    </span>
-                    <span class="text-[11px] uppercase tracking-widest font-bold">Nieuwe Standaard in Herstel</span>
+            
+            <div class="fade-in-up space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-sky-50 border border-sky-100 rounded-full text-sky-700 text-xs font-bold uppercase tracking-wider">
+                    <span class="w-2 h-2 bg-sky-500 rounded-full animate-pulse"></span> Medisch gevalideerd
                 </div>
-
-                <h1 class="text-5xl lg:text-7xl font-bold text-slate-900 tracking-tight leading-[1.1]">
-                    Herstel begint bij <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-medical-600 to-cyan-500">smaakbeleving.</span>
+                
+                <h1 class="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.1] tracking-tight">
+                    Samengesteld door <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-cyan-400">Internisten.</span>
                 </h1>
-
-                <p class="text-lg text-slate-600 leading-relaxed max-w-lg font-light">
-                    Transformeer nutritionele ondersteuning met <strong>SKYLD Medical</strong>. Hoogcalorisch ijs op basis van schapenmelk, specifiek ontwikkeld voor preventie van sarcopenie en de behandeling van ondervoeding bij ouderen.
+                
+                <p class="text-lg text-slate-600 font-medium leading-relaxed max-w-lg">
+                    Specifiek ontwikkeld om de <strong>eiwitinname bij ouderen te verhogen</strong>. SKYLD combineert 10g eiwit, HMB en supplementen in een heerlijk ijsje. Stop de strijd met drinkvoeding.
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                    <button class="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-white transition-all bg-medical-600 rounded-lg hover:bg-medical-700 shadow-lg shadow-medical-500/20 group">
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <button class="px-8 py-4 bg-slate-900 text-white font-bold rounded-xl shadow-xl hover:bg-slate-800 hover:-translate-y-1 transition-all">
                         Informatie voor Diëtisten
-                        <i data-lucide="arrow-right" class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1 stroke-[2]"></i>
                     </button>
-                    <button class="inline-flex items-center justify-center px-8 py-3.5 text-sm font-semibold text-slate-700 transition-all bg-white border border-slate-200 rounded-lg hover:bg-slate-50 hover:border-slate-300">
-                        <i data-lucide="file-text" class="mr-2 w-4 h-4 text-slate-400"></i>
-                        Download Whitepaper
+                    <button class="px-8 py-4 bg-white text-slate-700 border border-slate-200 font-bold rounded-xl hover:bg-slate-50 transition-all flex items-center gap-2">
+                        <i data-lucide="download" class="w-4 h-4"></i> Factsheet
                     </button>
                 </div>
 
-                <div class="flex items-center gap-6 text-xs text-slate-500 font-medium pt-8 border-t border-slate-200/60">
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 stroke-[2]"></i>
-                        <span>Wetenschappelijk Onderbouwd</span>
+                <div class="pt-6 border-t border-slate-200 grid grid-cols-2 gap-6">
+                    <div>
+                        <p class="text-3xl font-black text-slate-900">10g</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase">Eiwit per cup</p>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 stroke-[2]"></i>
-                        <span>Hoge Therapietrouw (92%)</span>
+                    <div>
+                        <p class="text-3xl font-black text-slate-900">9</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase">Supplementen</p>
                     </div>
                 </div>
             </div>
 
-            <div class="relative fade-in-up delay-100">
-                <div class="relative z-10 bg-white/80 backdrop-blur-md rounded-2xl shadow-float border border-white/50 p-8 max-w-md mx-auto transform transition-transform hover:-translate-y-1 duration-500">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-medical-500 to-human-500 rounded-t-2xl"></div>
+            <div class="relative fade-in-up delay-100 flex justify-center lg:justify-end">
+                <div class="relative w-full max-w-md aspect-[4/5] bg-slate-100 rounded-[2.5rem] overflow-hidden shadow-aura border-4 border-white">
+                    <img src="https://placehold.co/600x800/e0f2fe/0284c7?text=FOTO:+Stapel+SKYLD+Cups" alt="Stapel SKYLD IJs Cups" class="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition-duration-700">
                     
-                    <div class="flex justify-between items-start mb-8">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900 tracking-tight">Klinisch Profiel</h3>
-                            <p class="text-sm text-slate-500 mt-1">Per eenheid (125ml)</p>
-                        </div>
-                        <div class="w-10 h-10 bg-medical-50 rounded-full flex items-center justify-center">
-                            <i data-lucide="microscope" class="w-5 h-5 text-medical-600 stroke-[1.5]"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 border border-slate-100">
-                            <div class="flex items-center gap-3">
-                                <div class="p-1.5 bg-white rounded-md shadow-sm text-medical-600"><i data-lucide="dna" class="w-4 h-4 stroke-[2]"></i></div>
-                                <span class="text-sm font-medium text-slate-700">Eiwitten (Aminozuren)</span>
+                    <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur p-4 rounded-2xl shadow-lg border border-slate-100">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-bold text-slate-900">Vanille Smaak</p>
+                                <p class="text-xs text-slate-500">80g / 100ml</p>
                             </div>
-                            <span class="text-sm font-bold text-slate-900">10g</span>
+                            <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-lg">A2-Eiwit</span>
                         </div>
-                        
-                        <div class="flex items-center justify-between p-3 rounded-lg bg-white border border-slate-100">
-                            <div class="flex items-center gap-3">
-                                <div class="p-1.5 bg-slate-50 rounded-md shadow-sm text-slate-400"><i data-lucide="shield" class="w-4 h-4 stroke-[2]"></i></div>
-                                <span class="text-sm font-medium text-slate-600">HMB</span>
-                            </div>
-                            <span class="text-sm font-semibold text-slate-700">1000mg</span>
-                        </div>
-
-                        <div class="flex items-center justify-between p-3 rounded-lg bg-white border border-slate-100">
-                            <div class="flex items-center gap-3">
-                                <div class="p-1.5 bg-slate-50 rounded-md shadow-sm text-slate-400"><i data-lucide="zap" class="w-4 h-4 stroke-[2]"></i></div>
-                                <span class="text-sm font-medium text-slate-600">Creatine</span>
-                            </div>
-                            <span class="text-sm font-semibold text-slate-700">3g</span>
-                        </div>
-
-                         <div class="flex items-center justify-between p-3 rounded-lg bg-white border border-slate-100">
-                            <div class="flex items-center gap-3">
-                                <div class="p-1.5 bg-slate-50 rounded-md shadow-sm text-slate-400"><i data-lucide="sun" class="w-4 h-4 stroke-[2]"></i></div>
-                                <span class="text-sm font-medium text-slate-600">Vitamine D3</span>
-                            </div>
-                            <span class="text-sm font-semibold text-slate-700">50% ADH</span>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 pt-6 border-t border-slate-100 text-center">
-                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold tracking-widest uppercase border border-emerald-100">
-                            <i data-lucide="check" class="w-3 h-3"></i> Licht Verteerbaar (A2)
-                         </span>
                     </div>
                 </div>
                 
-                <div class="absolute -top-12 -right-12 w-32 h-32 bg-human-100 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse-slow"></div>
-                <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-medical-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-pulse-slow delay-100"></div>
+                <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-brand-blue/20 to-transparent rounded-full blur-3xl"></div>
             </div>
         </div>
     </header>
 
-    <section id="problem" class="py-24 bg-slate-50 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16 fade-in-up">
-                <h2 class="text-3xl font-bold text-slate-900 tracking-tight mb-4">De stille crisis in de zorg</h2>
-                <p class="text-slate-600 text-lg">Ondervoeding en sarcopenie verlengen de ligduur en verhogen de zorgkosten drastisch. Huidige supplementen stuiten vaak op weerstand door smaak en textuur.</p>
+    <section id="comparison" class="py-24 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-3xl font-black text-slate-900">Waarom een 'gewoon' toetje niet genoeg is.</h2>
+                <p class="text-slate-500 mt-2">Voor ouderen telt elke hap. Standaard vla vult de maag, maar voedt de spieren niet.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all fade-in-up delay-100">
-                    <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center mb-6">
-                        <i data-lucide="trending-down" class="w-6 h-6 text-red-500 stroke-[1.5]"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Spieratrofie & Sarcopenie</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">
-                        Bij bedlegerige ouderen kan tot 1kg spiermassa per week verloren gaan, wat revalidatie significant vertraagt.
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all fade-in-up delay-200">
-                    <div class="w-12 h-12 bg-human-50 rounded-lg flex items-center justify-center mb-6">
-                        <i data-lucide="alert-circle" class="w-6 h-6 text-human-500 stroke-[1.5]"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Malnutritie</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">
-                        1 op de 4 patiënten in ziekenhuizen is ondervoed. Gebrek aan eetlust maakt inname van voldoende calorieën complex.
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all fade-in-up">
-                    <div class="w-12 h-12 bg-medical-50 rounded-lg flex items-center justify-center mb-6">
-                        <i data-lucide="thumbs-up" class="w-6 h-6 text-medical-600 stroke-[1.5]"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-2">Compliance Problematiek</h3>
-                    <p class="text-sm text-slate-500 leading-relaxed">
-                        Traditionele drinkvoeding wordt vaak niet opgedronken door 'medische' smaak. IJs biedt een positieve smaakprikkel.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="science" class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-6">
-            
-            <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div class="grid md:grid-cols-2 gap-8 fade-in-up delay-100">
                 
-                <div class="fade-in-up">
-                    <div class="mb-10">
-                        <span class="text-medical-600 font-bold text-xs tracking-widest uppercase mb-2 block">De Formule</span>
-                        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">De Recovery Stack</h2>
-                        <p class="text-slate-500 mt-3 text-lg leading-relaxed">
-                            Skyld combineert de natuurlijke voordelen van schapenmelk met klinisch bewezen supplementen voor spierbehoud.
-                        </p>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 opacity-70 hover:opacity-100 transition-opacity">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold text-slate-500">Supermarkt Vla</h3>
+                        <div class="bg-red-100 text-red-600 p-2 rounded-full"><i data-lucide="x" class="w-6 h-6"></i></div>
                     </div>
-
-                    <div class="overflow-hidden rounded-xl border border-slate-200 shadow-subtle">
-                        <table class="min-w-full divide-y divide-slate-200">
-                            <thead class="bg-slate-50">
-                                <tr>
-                                    <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Actief Ingrediënt</th>
-                                    <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider hidden sm:table-cell">Mechanisme</th>
-                                    <th scope="col" class="px-4 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Klinisch Doel</th>
-                                </tr>
-                            </thead>
-                            <tbody class="bg-white divide-y divide-slate-200">
-                                <tr class="hover:bg-slate-50/50 transition-colors">
-                                    <td class="px-4 py-4 align-top">
-                                        <div class="flex items-center">
-                                            <div class="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-blue-50 text-blue-600 rounded-lg">
-                                                <i data-lucide="droplet" class="w-4 h-4 stroke-[1.5]"></i>
-                                            </div>
-                                            <div class="ml-3">
-                                                <div class="text-sm font-semibold text-slate-900">Schapenmelk</div>
-                                                <div class="text-xs text-slate-500">A2-eiwit</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="px-4 py-4 hidden sm:table-cell align-top">
-                                        <span class="text-sm text-slate-600">Lichtere vertering & hogere bio-beschikbaarheid.</span>
-                                    </td>
-                                    <td class="px-4 py-4 align-top">
-                                        <span class="px-2.5 py-1 inline-flex text-[11px] leading-4 font-semibold rounded-full bg-blue-100 text-blue-800">
-                                            Energie & Tolerantie
-                                        </span>
-                                    </td>
-                                </tr>
-
-                                <tr class="hover:bg-slate-50/50 transition-colors">
-                                    <td class="px-4 py-4 align-top">
-                                        <div class="flex items-center">
-                                            <div class="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-purple-50 text-purple-600 rounded-lg">
-                                                <i data-lucide="layers" class="w-4 h-4 stroke-[1.5]"></i>
-                                            </div>
-                                            <div class="ml-3">
-                                                <div class="text-sm font-semibold text-slate-900">HMB</div>
-                                                <div class="text-xs text-slate-500">Leucine metab.</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="px-4 py-4 hidden sm:table-cell align-top">
-                                        <span class="text-sm text-slate-600">Remt eiwitafbraak en stimuleert synthese.</span>
-                                    </td>
-                                    <td class="px-4 py-4 align-top">
-                                        <span class="px-2.5 py-1 inline-flex text-[11px] leading-4 font-semibold rounded-full bg-purple-100 text-purple-800">
-                                            Anti-Spieratrofie
-                                        </span>
-                                    </td>
-                                </tr>
-
-                                <tr class="hover:bg-slate-50/50 transition-colors">
-                                    <td class="px-4 py-4 align-top">
-                                        <div class="flex items-center">
-                                            <div class="flex-shrink-0 h-8 w-8 flex items-center justify-center bg-yellow-50 text-yellow-600 rounded-lg">
-                                                <i data-lucide="battery-charging" class="w-4 h-4 stroke-[1.5]"></i>
-                                            </div>
-                                            <div class="ml-3">
-                                                <div class="text-sm font-semibold text-slate-900">Creatine</div>
-                                                <div class="text-xs text-slate-500">Monohydraat</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="px-4 py-4 hidden sm:table-cell align-top">
-                                        <span class="text-sm text-slate-600">Ondersteunt cellulaire energie en cognitie.</span>
-                                    </td>
-                                    <td class="px-4 py-4 align-top">
-                                        <span class="px-2.5 py-1 inline-flex text-[11px] leading-4 font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                                            Fysieke Stabiliteit
-                                        </span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                     <div class="mt-6">
-                        <button class="text-sm font-medium text-slate-600 hover:text-medical-600 flex items-center gap-2 transition-colors">
-                            Bekijk klinische studies <i data-lucide="external-link" class="w-4 h-4 stroke-[1.5]"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="relative h-full min-h-[500px] rounded-2xl overflow-hidden shadow-float border border-slate-100 fade-in-up delay-100 lg:sticky lg:top-32">
-                     <img src="unnamed-3.jpg" alt="Patiënt geniet van Skyld" class="absolute inset-0 w-full h-full object-cover">
-                     
-                     <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent p-8">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white mb-3">
-                             <i data-lucide="smile" class="w-3 h-3"></i>
-                             <span class="text-[10px] font-bold tracking-widest uppercase">Genietmoment</span>
-                        </div>
-                        <p class="text-white text-lg font-medium leading-snug">"Het voelt niet als eten, maar als trakteren. Dit maakt mijn dag beter."</p>
-                     </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
-                <div class="max-w-2xl">
-                    <div class="flex gap-2 text-medical-500 mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <blockquote class="text-xl font-medium text-slate-900 leading-relaxed">
-                        "Eindelijk een interventie die patiënten daadwerkelijk willen. De combinatie van hoogwaardige eiwitten met de smakelijkheid van ijs zorgt voor een meetbaar hogere inname."
-                    </blockquote>
-                    <div class="mt-4 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 font-bold">DR</div>
-                        <div>
-                            <div class="text-sm font-bold text-slate-900">Dr. S. van der Meer</div>
-                            <div class="text-xs text-slate-500">Klinisch Geriater</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-8 opacity-60 grayscale">
-                   <div class="flex items-center gap-2 font-bold text-slate-400 text-lg"><i data-lucide="building-2" class="w-6 h-6"></i> ZorgGroep Noord</div>
-                   <div class="flex items-center gap-2 font-bold text-slate-400 text-lg"><i data-lucide="heart-pulse" class="w-6 h-6"></i> Medisch Centrum</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="management" class="py-24 bg-slate-900 text-white overflow-hidden relative">
-        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-medical-600/10 rounded-full blur-[100px] pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                
-                <div class="fade-in-up">
-                    <h2 class="text-3xl font-bold tracking-tight mb-6">Efficiëntie in de Zorgketen</h2>
-                    <p class="text-slate-300 text-lg mb-8 font-light leading-relaxed">
-                        Skyld is niet alleen voeding; het is een instrument voor kostenbeheersing. Sneller herstel betekent een kortere ligduur en lagere zorgzwaarte.
-                    </p>
-
-                    <ul class="space-y-8">
-                        <li class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-medical-500/20 flex items-center justify-center border border-medical-500/30 flex-shrink-0">
-                                <i data-lucide="pie-chart" class="w-5 h-5 text-medical-400 stroke-[1.5]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-lg">Minder Voedselverspilling</h4>
-                                <p class="text-sm text-slate-300 mt-1 max-w-sm">Diepvriesproduct: lange houdbaarheid en exacte portionering. Geen aangebroken flessen die weggegooid worden.</p>
-                            </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-center justify-between text-slate-600 py-2 border-b border-slate-100">
+                            <span>Eiwit</span>
+                            <span class="font-mono text-red-500">2g</span>
                         </li>
-                        <li class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-medical-500/20 flex items-center justify-center border border-medical-500/30 flex-shrink-0">
-                                <i data-lucide="clock" class="w-5 h-5 text-medical-400 stroke-[1.5]"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white text-lg">Tijdsbesparing Zorgpersoneel</h4>
-                                <p class="text-sm text-slate-300 mt-1 max-w-sm">Kant-en-klaar in cup. Geen bereiding nodig. Patiënten eten het vaak zelfstandig (lepelbaar).</p>
-                            </div>
+                        <li class="flex items-center justify-between text-slate-600 py-2 border-b border-slate-100">
+                            <span>HMB (Spierbehoud)</span>
+                            <span class="font-mono text-red-500">0mg</span>
+                        </li>
+                        <li class="flex items-center justify-between text-slate-600 py-2 border-b border-slate-100">
+                            <span>Vitaminen</span>
+                            <span class="font-mono text-red-500">Geen</span>
+                        </li>
+                        <li class="flex items-center justify-between text-slate-600 py-2">
+                            <span>Suikers</span>
+                            <span class="font-mono font-bold text-slate-900">Hoog (Piek)</span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="bg-slate-800/80 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 shadow-2xl fade-in-up delay-100">
-                    <h3 class="text-sm font-bold text-slate-300 uppercase tracking-widest mb-6 border-b border-slate-700 pb-4">Impact Calculator</h3>
-                    
-                    <div class="space-y-8">
-                        <div class="space-y-4">
-                            <div class="flex justify-between text-sm">
-                                <span class="text-slate-300">Patiënten met risico (per maand)</span>
-                                <span class="font-mono text-medical-400 font-bold text-lg">120</span>
-                            </div>
-                            <div class="h-2 bg-slate-700 rounded-full overflow-hidden cursor-pointer group">
-                                <div class="h-full bg-medical-500 w-[60%] rounded-full group-hover:bg-medical-400 transition-colors"></div>
-                            </div>
-                        </div>
+                <div class="bg-white p-8 rounded-3xl border-2 border-brand-blue shadow-aura relative overflow-hidden transform scale-105">
+                    <div class="absolute top-0 right-0 bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-bl-xl">KEUZE VAN DE INTERNIST</div>
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-black text-slate-900">SKYLD Medical</h3>
+                        <div class="bg-brand-blue text-white p-2 rounded-full"><i data-lucide="check" class="w-6 h-6"></i></div>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-center justify-between text-slate-700 font-medium py-2 border-b border-slate-100">
+                            <span>Eiwit (A2)</span>
+                            <span class="font-mono font-bold text-brand-blue text-lg">10g</span>
+                        </li>
+                        <li class="flex items-center justify-between text-slate-700 font-medium py-2 border-b border-slate-100">
+                            <span>HMB (Spierbehoud)</span>
+                            <span class="font-mono font-bold text-brand-blue">1000mg</span>
+                        </li>
+                        <li class="flex items-center justify-between text-slate-700 font-medium py-2 border-b border-slate-100">
+                            <span>Supplementen</span>
+                            <span class="font-mono font-bold text-brand-blue">9 Stuks</span>
+                        </li>
+                        <li class="flex items-center justify-between text-slate-700 font-medium py-2">
+                            <span>Opneembaarheid</span>
+                            <span class="font-mono font-bold text-green-600">Optimaal</span>
+                        </li>
+                    </ul>
+                </div>
 
-                        <div class="flex items-center justify-between py-2">
-                            <span class="text-sm text-slate-300">Implementatie Protocol Skyld</span>
-                            <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
-                                <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer checked:right-0 checked:border-medical-500 transition-all duration-300" checked>
-                                <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-slate-700 cursor-pointer"></label>
-                            </div>
-                        </div>
+            </div>
+        </div>
+    </section>
 
-                        <div class="bg-slate-900 rounded-xl p-6 border border-slate-700 flex flex-col gap-3">
-                            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                                <span class="text-sm text-slate-400">Geschatte Proteïne Inname</span>
-                                <span class="text-emerald-400 text-sm font-bold flex items-center gap-1">
-                                    <i data-lucide="arrow-up" class="w-4 h-4"></i> +35%
-                                </span>
-                            </div>
-                            <div class="flex justify-between items-center pt-1">
-                                <span class="text-sm text-slate-400">Therapietrouw (Compliance)</span>
-                                <span class="text-emerald-400 text-sm font-bold flex items-center gap-1">
-                                    <i data-lucide="arrow-up" class="w-4 h-4"></i> 92%
-                                </span>
-                            </div>
-                        </div>
-
-                        <button class="w-full py-4 bg-medical-600 hover:bg-medical-500 text-white rounded-lg text-sm font-bold tracking-wide transition-all shadow-glow hover:shadow-lg animate-[pulse_3s_infinite]">
-                            Bereken besparing voor uw instelling
-                        </button>
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-12">Trotse partners in de zorg</p>
+            
+            <div class="grid md:grid-cols-3 gap-12 items-center opacity-80 hover:opacity-100 transition-opacity">
+                <div class="group">
+                    <div class="text-4xl lg:text-5xl font-black text-slate-300 group-hover:text-brand-blue transition-colors flex items-center justify-center gap-3">
+                        <i data-lucide="building" class="w-10 h-10"></i> ZORG<span class="text-slate-900 group-hover:text-brand-blue">GROEP</span>
                     </div>
                 </div>
+                <div class="group">
+                    <div class="text-4xl lg:text-5xl font-black text-slate-300 group-hover:text-brand-blue transition-colors flex items-center justify-center gap-3">
+                        <i data-lucide="heart-handshake" class="w-10 h-10"></i> MEDISCH<span class="text-slate-900 group-hover:text-brand-blue">CENTRUM</span>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="text-4xl lg:text-5xl font-black text-slate-300 group-hover:text-brand-blue transition-colors flex items-center justify-center gap-3">
+                        <i data-lucide="activity" class="w-10 h-10"></i> THUIS<span class="text-slate-900 group-hover:text-brand-blue">ZORG+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="science" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-12">
+                <span class="text-brand-blue font-bold text-xs uppercase tracking-widest block mb-2">De Formule</span>
+                <h2 class="text-4xl font-black">Ontwikkeld voor ouderen.</h2>
+                <p class="text-slate-400 mt-2 text-lg">Ouderen hebben een verhoogde behoefte aan eiwitten en specifieke micronutriënten.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-slate-800/50 p-6 rounded-3xl border border-slate-700 hover:border-brand-blue transition-colors group">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                        <i data-lucide="droplet" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1">Schapenmelk</h4>
+                    <p class="text-sm text-slate-400">A2-Eiwit, lichter verteerbaar voor oudere darmen.</p>
+                </div>
+
+                <div class="bg-slate-800/50 p-6 rounded-3xl border border-slate-700 hover:border-brand-blue transition-colors group">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 mb-4 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1">HMB & Creatine</h4>
+                    <p class="text-sm text-slate-400">Directe ondersteuning tegen spierafbraak.</p>
+                </div>
+
+                <div class="bg-slate-800/50 p-6 rounded-3xl border border-slate-700 hover:border-brand-blue transition-colors group">
+                    <div class="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center text-orange-400 mb-4 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                        <i data-lucide="sun" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1">Vit D + K + E</h4>
+                    <p class="text-sm text-slate-400">Essentieel voor botdichtheid en weerstand.</p>
+                </div>
+
+                <div class="bg-slate-800/50 p-6 rounded-3xl border border-slate-700 hover:border-brand-blue transition-colors group">
+                    <div class="w-12 h-12 bg-slate-600/20 rounded-xl flex items-center justify-center text-slate-300 mb-4 group-hover:bg-slate-600 group-hover:text-white transition-colors">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-1">Magnesium</h4>
+                    <p class="text-sm text-slate-400">Voor spierfunctie en elektrolytenbalans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            
+            <div class="space-y-6">
+                <h2 class="text-4xl font-black text-slate-900">Eenvoudige Inkoop.</h2>
+                <p class="text-lg text-slate-600">
+                    Geen complexe contracten. Bestel direct of vraag een offerte aan voor uw instelling. Geleverd in dozen van 24 stuks.
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-3 font-bold text-slate-700"><i data-lucide="check" class="text-brand-blue"></i> Diepvrieslevering (12 maanden houdbaar)</li>
+                    <li class="flex items-center gap-3 font-bold text-slate-700"><i data-lucide="check" class="text-brand-blue"></i> Volumevoordeel vanaf 10 dozen</li>
+                    <li class="flex items-center gap-3 font-bold text-slate-700"><i data-lucide="check" class="text-brand-blue"></i> Past in standaard vrieslogistiek</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-lg">
+                <div class="flex justify-between items-end mb-6">
+                    <div>
+                        <p class="text-sm font-bold text-slate-500 uppercase">Starttarief</p>
+                        <p class="text-3xl font-black text-slate-900">Op aanvraag</p>
+                    </div>
+                    <div class="bg-brand-blue text-white px-3 py-1 rounded-full text-xs font-bold">B2B</div>
+                </div>
+                <div class="space-y-4 mb-8">
+                    <div class="flex justify-between text-sm font-medium text-slate-600 border-b border-slate-200 pb-2">
+                        <span>1 - 10 Dozen</span>
+                        <span>Basis</span>
+                    </div>
+                    <div class="flex justify-between text-sm font-medium text-slate-600 border-b border-slate-200 pb-2">
+                        <span>10 - 50 Dozen</span>
+                        <span class="text-green-600 font-bold">-5% Korting</span>
+                    </div>
+                    <div class="flex justify-between text-sm font-medium text-slate-600 border-b border-slate-200 pb-2">
+                        <span>Pallet (Vol)</span>
+                        <span class="text-green-600 font-bold">-12% Korting</span>
+                    </div>
+                </div>
+                <a href="#contact" class="block w-full bg-slate-900 text-white text-center font-bold py-4 rounded-xl hover:bg-slate-800 transition-colors">
+                    Vraag Prijslijst Aan
+                </a>
             </div>
 
         </div>
@@ -496,73 +291,56 @@
 
     <footer id="contact" class="bg-white border-t border-slate-200 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-12 mb-16">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-2 mb-6">
-                        <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center">
-                            <i data-lucide="shield-check" class="text-white w-5 h-5 stroke-[2]"></i>
-                        </div>
-                        <span class="font-bold text-slate-900 tracking-tight text-lg">SKYLD MEDICAL</span>
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center text-white"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+                        <span class="font-black text-xl text-slate-900">SKYLD MEDICAL</span>
                     </div>
-                    <p class="text-slate-500 text-sm leading-relaxed max-w-sm">
-                        Gespecialiseerde klinische voeding op basis van schapenmelk. Ontwikkeld in Friesland voor de Europese zorgsector.
-                    </p>
+                    <p class="text-slate-500 max-w-sm mb-6">Gespecialiseerde klinische voeding op basis van schapenmelk. Ontwikkeld in Friesland.</p>
+                    <p class="text-xl font-bold text-slate-900"><i data-lucide="phone" class="inline w-5 h-5 mr-2 text-brand-blue"></i> 0513-241124</p>
                 </div>
-
+                
                 <div>
-                    <h4 class="font-bold text-slate-900 mb-4 text-sm">Productinformatie</h4>
-                    <ul class="space-y-3 text-sm text-slate-500">
-                        <li><a href="#" class="hover:text-medical-600 transition-colors">Voedingswaarden</a></li>
-                        <li><a href="#" class="hover:text-medical-600 transition-colors">Allergenen (A2 Melk)</a></li>
-                        <li><a href="#" class="hover:text-medical-600 transition-colors">Whitepapers</a></li>
+                    <h4 class="font-bold text-slate-900 mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-brand-blue">Specificaties</a></li>
+                        <li><a href="#" class="hover:text-brand-blue">Allergenen</a></li>
+                        <li><a href="#" class="hover:text-brand-blue">Whitepapers</a></li>
                     </ul>
                 </div>
-
+                
                 <div>
-                    <h4 class="font-bold text-slate-900 mb-4 text-sm">Zakelijk</h4>
-                    <ul class="space-y-3 text-sm text-slate-500">
-                        <li><a href="#" class="hover:text-medical-600 transition-colors font-medium text-medical-600">Vraag proefpakket aan</a></li>
-                        <li><a href="#" class="hover:text-medical-600 transition-colors">Inkoop & Distributie</a></li>
-                        <li><a href="mailto:info@skyld.nl" class="hover:text-medical-600 transition-colors">Contact Sales</a></li>
+                    <h4 class="font-bold text-slate-900 mb-4">Zakelijk</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-brand-blue">Proefpakket aanvragen</a></li>
+                        <li><a href="#" class="hover:text-brand-blue">Inkoop & Levering</a></li>
+                        <li><a href="mailto:info@skyld.nl" class="hover:text-brand-blue">Contact Sales</a></li>
                     </ul>
                 </div>
             </div>
-
-            <div class="border-t border-slate-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="text-xs text-slate-400">
-                    &copy; 2024 Skyld Medical B.V. - Alle rechten voorbehouden.
-                </div>
-                <div class="flex gap-6">
-                    <a href="#" class="text-slate-300 hover:text-medical-600 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-                    <a href="#" class="text-slate-300 hover:text-medical-600 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+            
+            <div class="border-t border-slate-100 pt-8 flex justify-between items-center text-xs text-slate-400">
+                <p>&copy; 2025 Skyld Medical B.V.</p>
+                <div class="flex gap-4">
+                    <span>HACCP Gecertificeerd</span>
+                    <span>ISO 9001</span>
+                    <span>Made in Holland</span>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Initialize Icons
         lucide.createIcons();
-
-        // Intersection Observer for Fade-in Animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            observer.observe(el);
-        });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
