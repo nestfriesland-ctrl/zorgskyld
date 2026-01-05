@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SKYLD Medical - Klinische voeding vermomd als ijs. De nieuwe standaard tegen sarcopenie.">
+    <meta name="description" content="SKYLD Medical - Eiwitrijke klinische voeding op basis van schapenmelk.">
     <title>SKYLD Medical | De Nieuwe Standaard</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -17,156 +19,234 @@
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
                         brand: {
-                            dark: '#0B1120', /* Dieper donkerblauw/zwart voor AURA stijl */
-                            blue: '#0066FF', /* Iets helderder blauw */
-                            softblue: '#EBF3FF',
+                            dark: '#0f172a',
+                            blue: '#0284c7',
                             accent: '#10b981'
+                        },
+                        // Aura kleuren (Delft Blue palette)
+                        delft: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bae6fd',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        },
+                    },
+                    backgroundImage: {
+                        // Het subtiele patroon uit de Aura code
+                        'tile-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230284c7' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
                         }
                     },
                     boxShadow: {
-                        'aura': '0 20px 40px -15px rgba(0, 102, 255, 0.2)',
-                        'float': '0 10px 30px -5px rgba(0,0,0,0.1)',
+                        'glow': '0 0 60px -15px rgba(2, 132, 199, 0.25)',
+                        'card': '0 10px 40px -10px rgba(0,0,0,0.08)'
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Het subtiele AURA achtergrond patroon */
-        .bg-aura-pattern {
-            background-color: #f8fafc;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e8f0' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
+        body { background-color: #ffffff; color: #0f172a; }
         
-        .aura-glow {
-            background: radial-gradient(circle at center, rgba(0, 102, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+        /* Glassmorphism voor de navigatie */
+        .glass-nav { 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(12px); 
+            border-bottom: 1px solid rgba(0,0,0,0.05); 
         }
-        
-        .fade-in-up { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
-        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* Smooth reveal animation */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="bg-aura-pattern text-slate-900 leading-relaxed">
+<body class="selection:bg-delft-900 selection:text-white overflow-x-hidden">
 
-    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-9 h-9 bg-brand-blue rounded-lg flex items-center justify-center text-white shadow-sm">
-                    <i data-lucide="shield-plus" class="w-5 h-5"></i>
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-9 h-9 bg-delft-900 text-white rounded-lg flex items-center justify-center shadow-lg shadow-delft-900/20 group-hover:scale-105 transition-transform">
+                    <i data-lucide="shield-half" class="w-5 h-5 stroke-[2]"></i>
                 </div>
-                <span class="font-black text-xl tracking-tighter text-brand-dark">SKYLD<span class="text-brand-blue">.</span></span>
-            </div>
-            <div class="hidden md:flex gap-8 text-sm font-bold text-slate-600">
-                <a href="#waarom" class="hover:text-brand-blue transition-colors">De Noodzaak</a>
-                <a href="#wetenschap" class="hover:text-brand-blue transition-colors">Wetenschap</a>
-                <a href="#proeven" class="hover:text-brand-blue transition-colors">Proefpakket</a>
-            </div>
-            <a href="#contact" class="px-6 py-2.5 bg-brand-dark text-white text-sm font-bold rounded-lg hover:bg-brand-blue transition-all shadow-sm">
-                Contact
+                <span class="font-bold text-xl tracking-tighter text-slate-900">SKYLD<span class="text-delft-600">ZORG</span></span>
             </a>
+
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-500">
+                <a href="#waarom" class="hover:text-delft-700 transition-colors">De Noodzaak</a>
+                <a href="#wetenschap" class="hover:text-delft-700 transition-colors">Wetenschap</a>
+                <a href="#proeven" class="hover:text-delft-700 transition-colors">Proefpakket</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#proeven" class="hidden sm:flex px-6 py-2.5 bg-delft-900 text-white text-xs font-bold tracking-wide uppercase rounded-full hover:bg-delft-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                    Proefpakket
+                </a>
+            </div>
         </div>
     </nav>
 
-    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-50">
+        
+        <div class="absolute inset-0 bg-tile-pattern opacity-60 pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-b from-delft-200/40 to-transparent rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 z-0"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-blue-100/50 to-transparent rounded-full blur-[80px] translate-y-1/3 -translate-x-1/4 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
             
-            <div class="fade-in-up space-y-8 relative z-10 text-left">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-blue-100 rounded-full text-brand-blue text-[11px] font-bold uppercase tracking-widest shadow-sm">
-                    <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span></span>
-                    Nieuwe Standaard
-                </div>
-                
-                <h1 class="text-5xl lg:text-7xl font-black text-brand-dark leading-[1.1] tracking-tight">
-                    Klinische voeding, <br>
-                    <span class="text-brand-blue">vermomd</span> als ijs.
-                </h1>
-                
-                <p class="text-lg text-slate-500 font-medium leading-relaxed max-w-lg">
-                    Sarcopenie bestrijden met smaak. De eerste medische voeding die patiënten <em>willen</em> eten. <strong>10g eiwit</strong> en <strong>1000mg HMB</strong> in een 125ml cup.
-                </p>
-                
-                <div class="flex flex-wrap gap-4 pt-4">
-                    <button class="px-8 py-4 bg-brand-dark text-white font-bold rounded-xl shadow-lg hover:bg-brand-blue transition-all flex items-center gap-3">
-                        Informatie voor Diëtisten
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </button>
-                    <button class="px-8 py-4 bg-white text-slate-700 border-2 border-slate-200 font-bold rounded-xl hover:border-brand-blue hover:text-brand-blue transition-all flex items-center gap-3">
-                        <i data-lucide="file-text" class="w-5 h-5"></i>
-                        Factsheet PDF
-                    </button>
+            <div class="reveal space-y-8 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-slate-200 rounded-full shadow-sm mb-4">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-delft-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-delft-600"></span>
+                    </span>
+                    <span class="text-xs font-bold text-slate-600 uppercase tracking-widest">Nieuwe Standaard</span>
                 </div>
 
-                <div class="pt-10 grid grid-cols-3 gap-8 border-t border-slate-200/60">
+                <h1 class="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight">
+                    Klinische voeding,<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-delft-900 via-delft-600 to-delft-400">vermomd als ijs.</span>
+                </h1>
+
+                <p class="text-lg lg:text-xl text-slate-500 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    Sarcopenie bestrijden met smaak. De eerste medische voeding die patiënten <em>willen</em> eten. <strong>10g eiwit</strong> en <strong>1000mg HMB</strong> in een 100ml cup.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                    <button class="px-8 py-4 bg-delft-900 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl hover:bg-slate-800 transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
+                        Informatie voor Diëtisten <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                    <a href="dossier.html" class="px-8 py-4 bg-white text-slate-700 border border-slate-200 font-bold text-sm rounded-xl hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="file-text" class="w-4 h-4 text-delft-600"></i> Factsheet PDF
+                    </a>
+                </div>
+
+                <div class="pt-8 border-t border-slate-200/60 flex items-center justify-center lg:justify-start gap-8 lg:gap-12">
                     <div>
-                        <p class="text-4xl lg:text-5xl font-black text-brand-dark">92%</p>
-                        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mt-1">Compliance</p>
+                        <p class="text-3xl font-bold text-slate-900 tracking-tight">92%</p>
+                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Compliance</p>
                     </div>
+                    <div class="w-px h-10 bg-slate-300"></div>
                     <div>
-                        <p class="text-4xl lg:text-5xl font-black text-brand-dark">A2</p>
-                        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mt-1">Oer-Eiwit</p>
+                        <p class="text-3xl font-bold text-slate-900 tracking-tight">A2</p>
+                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Oer-Eiwit</p>
                     </div>
+                    <div class="w-px h-10 bg-slate-300"></div>
                     <div>
-                        <p class="text-4xl lg:text-5xl font-black text-brand-dark">1.8d</p>
-                        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mt-1">Kortere Ligduur</p>
+                        <p class="text-3xl font-bold text-slate-900 tracking-tight">1.8d</p>
+                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Kortere Ligduur</p>
                     </div>
                 </div>
             </div>
 
-            <div class="relative fade-in-up delay-200 flex justify-center items-center lg:justify-end h-[500px] lg:h-[600px]">
+            <div id="product" class="reveal delay-100 relative h-[500px] lg:h-[600px] flex items-center justify-center">
+                <div class="absolute w-[400px] h-[400px] bg-gradient-to-r from-delft-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
                 
-                <div class="absolute inset-0 aura-glow rounded-full blur-3xl opacity-70 z-0 transform translate-x-10"></div>
-                
-                <div class="relative z-10 w-[90%] aspect-square rounded-full bg-white shadow-aura border-4 border-white flex items-center justify-center p-8">
-                    <img src="https://placehold.co/400x400/e0f2fe/0284c7?text=SKYLD+Cup+Image" alt="SKYLD IJs Cup" class="w-full h-full object-contain drop-shadow-xl transform hover:scale-105 transition-transform duration-500">
+                <div class="relative w-80 h-80 lg:w-96 lg:h-96 group animate-float z-20">
                     
-                    <div class="absolute top-10 -right-6 bg-white p-3 rounded-2xl shadow-float flex items-center gap-3 animate-bounce hover:pause" style="animation-duration: 3s;">
-                        <div class="w-12 h-12 bg-brand-softblue rounded-full flex items-center justify-center text-brand-blue font-black text-lg">10g</div>
-                        <div>
-                            <p class="font-bold text-brand-dark leading-none">Eiwit</p>
-                            <p class="text-xs text-slate-400">Per cup</p>
+                    <div class="absolute inset-0 bg-white rounded-full shadow-glow border border-slate-50"></div>
+
+                    <div class="absolute inset-0 flex items-center justify-center p-6">
+                        <img src="https://placehold.co/400x400/transparent/0284c7?text=SKYLD+Cup" alt="SKYLD Cup" class="w-full h-full object-contain drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-700">
+                    </div>
+
+                    <div class="absolute top-1/4 -right-6 lg:-right-10 bg-white/90 backdrop-blur border border-slate-100 p-3 pr-5 rounded-2xl shadow-card flex items-center gap-3 animate-bounce hover:pause cursor-help" style="animation-duration: 4s;">
+                        <div class="w-10 h-10 bg-delft-100 rounded-full flex items-center justify-center text-delft-600 font-black text-sm">10g</div>
+                        <div class="text-left">
+                            <p class="font-bold text-slate-900 text-sm leading-none">Eiwit</p>
+                            <p class="text-[10px] text-slate-500">Per cup</p>
                         </div>
                     </div>
 
-                    <div class="absolute bottom-10 -left-6 bg-white p-3 rounded-2xl shadow-float flex items-center gap-3 animate-bounce hover:pause" style="animation-duration: 3.5s; animation-delay: 0.5s;">
-                         <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600"><i data-lucide="qr-code" class="w-6 h-6"></i></div>
-                        <div>
-                            <p class="font-bold text-brand-dark leading-none">Scanbaar</p>
-                            <p class="text-xs text-slate-400">Volledige info</p>
+                    <div class="absolute bottom-1/4 -left-6 lg:-left-10 bg-white/90 backdrop-blur border border-slate-100 p-3 pr-5 rounded-2xl shadow-card flex items-center gap-3 animate-bounce hover:pause cursor-help" style="animation-duration: 5s; animation-delay: 1s;">
+                        <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600"><i data-lucide="qr-code" class="w-5 h-5"></i></div>
+                        <div class="text-left">
+                            <p class="font-bold text-slate-900 text-sm leading-none">Scanbaar</p>
+                            <p class="text-[10px] text-slate-500">Volledige info</p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="proeven" class="py-20 bg-brand-softblue relative overflow-hidden">
-        <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-in-up">
-            <h2 class="text-3xl lg:text-4xl font-black text-brand-dark mb-6">Klaar om te proeven?</h2>
-            <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+    <section id="waarom" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-sm reveal">
+                    <div class="inline-flex p-2 bg-red-50 text-red-500 rounded-lg mb-4"><i data-lucide="alert-triangle" class="w-5 h-5"></i></div>
+                    <h3 class="text-xl font-black mb-4 text-slate-800">Traditionele Drinkvoeding</h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 text-slate-600 text-sm">
+                            <i data-lucide="x" class="text-red-400 w-5 h-5 shrink-0"></i>
+                            <span>Lage therapietrouw door "medische" smaak en textuur.</span>
+                        </li>
+                        <li class="flex gap-3 text-slate-600 text-sm">
+                            <i data-lucide="x" class="text-red-400 w-5 h-5 shrink-0"></i>
+                            <span>Geen HMB toevoeging (mist bescherming tegen spierafbraak).</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-delft-50 border border-delft-100 shadow-sm relative overflow-hidden reveal delay-100">
+                    <div class="inline-flex p-2 bg-delft-600 text-white rounded-lg mb-4"><i data-lucide="check" class="w-5 h-5"></i></div>
+                    <h3 class="text-xl font-black mb-4 text-delft-900">De SKYLD Oplossing</h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-3 text-slate-700 text-sm font-medium">
+                            <i data-lucide="check-circle-2" class="text-delft-600 w-5 h-5 shrink-0"></i>
+                            <span><strong>HMB + A2 Eiwit:</strong> Stopt afbraak én bouwt op.</span>
+                        </li>
+                        <li class="flex gap-3 text-slate-700 text-sm font-medium">
+                            <i data-lucide="check-circle-2" class="text-delft-600 w-5 h-5 shrink-0"></i>
+                            <span><strong>IJs-matrix:</strong> Verkoelend, makkelijk slikbaar en lekker.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proeven" class="py-24 bg-slate-50 relative overflow-hidden">
+        <div class="absolute inset-0 bg-tile-pattern opacity-30 pointer-events-none"></div>
+        
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-10 reveal">
+            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Klaar om te proeven?</h2>
+            <p class="text-slate-600 mb-8 max-w-lg mx-auto">
                 Vraag een proefpakket aan voor uw instelling. Wij leveren diepvries direct tot in de keuken.
             </p>
-            
-            <div class="bg-white p-2 rounded-2xl shadow-lg flex flex-col sm:flex-row gap-2 max-w-lg mx-auto">
-                <input type="email" placeholder="Zakelijk e-mailadres" class="flex-grow px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-slate-700">
-                <button class="px-8 py-3 bg-brand-dark text-white font-bold rounded-xl hover:bg-brand-blue transition-all">
+
+            <div class="bg-white p-2 rounded-2xl shadow-xl shadow-delft-900/5 flex flex-col sm:flex-row gap-2 max-w-lg mx-auto transform hover:scale-[1.01] transition-transform border border-slate-100">
+                <input type="email" placeholder="Zakelijk e-mailadres" class="flex-grow px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-delft-500/20 text-slate-700 placeholder:text-slate-400 bg-transparent">
+                <button class="px-8 py-4 bg-delft-900 text-white font-bold rounded-xl hover:bg-delft-700 transition-colors">
                     Aanvragen
                 </button>
             </div>
 
-            <div class="flex justify-center gap-6 mt-8 text-sm font-bold text-slate-500">
-                <span class="flex items-center gap-2"><i data-lucide="package" class="w-4 h-4"></i> Gratis Levering</span>
+            <div class="flex justify-center gap-8 mt-10 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                <span class="flex items-center gap-2"><i data-lucide="package-check" class="w-4 h-4"></i> Gratis Levering</span>
                 <span class="flex items-center gap-2"><i data-lucide="snowflake" class="w-4 h-4"></i> Diepvries Transport</span>
             </div>
         </div>
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white opacity-60 blur-3xl rounded-full z-0"></div>
     </section>
 
-    <footer class="bg-white py-12 border-t border-slate-100 bg-aura-pattern">
+    <footer class="bg-white py-12 border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="flex justify-center items-center gap-2 mb-6">
-                 <span class="font-black text-xl tracking-tighter text-brand-dark">SKYLD MEDICAL</span>
+            <div class="flex justify-center items-center gap-2 mb-6 opacity-50 grayscale hover:grayscale-0 transition-all">
+                <div class="w-6 h-6 bg-delft-900 rounded flex items-center justify-center text-white"><i data-lucide="shield" class="w-3 h-3"></i></div>
+                <span class="font-black text-lg tracking-tighter text-slate-900">SKYLD</span>
             </div>
-            <p class="text-slate-400 text-xs font-bold uppercase tracking-[0.2em]">&copy; 2026 Klinische Innovatie</p>
+            <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">&copy; 2026 SKYLD MEDICAL B.V.</p>
         </div>
     </footer>
 
@@ -175,11 +255,11 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    entry.target.classList.add('active');
                 }
             });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
