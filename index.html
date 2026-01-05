@@ -134,25 +134,24 @@
             <div id="product" class="reveal delay-100 relative h-[500px] lg:h-[600px] flex items-center justify-center">
                 <div class="absolute w-[400px] h-[400px] bg-gradient-to-r from-delft-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
                 <div class="relative w-80 h-80 lg:w-96 lg:h-96 group animate-float z-20">
-                    <div class="absolute inset-0 bg-white rounded-full shadow-glow border border-slate-50"></div>
-                    <div class="absolute inset-0 flex items-center justify-center p-6">
-                        <img src="https://placehold.co/400x400/transparent/0284c7?text=SKYLD+Cup" alt="SKYLD Cup" class="w-full h-full object-contain drop-shadow-2xl transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-white rounded-full shadow-glow border border-slate-50 overflow-hidden">
+                        <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                            <source src="assets/Aspect_Ratio_Video_Generation.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
-                    <div class="absolute top-1/4 -right-6 lg:-right-10 bg-white/90 backdrop-blur border border-slate-100 p-3 pr-5 rounded-2xl shadow-card flex items-center gap-3 animate-bounce hover:pause cursor-help" style="animation-duration: 4s;">
-                        <div class="w-10 h-10 bg-delft-100 rounded-full flex items-center justify-center text-delft-600 font-black text-sm">10g</div>
+                    
+                    <div class="absolute top-1/4 -right-6 lg:-right-10 bg-white/90 backdrop-blur border border-slate-100 p-4 pr-6 rounded-2xl shadow-card flex items-center gap-4 animate-bounce hover:pause cursor-help" style="animation-duration: 4s;">
+                        <div class="w-12 h-12 bg-delft-100 rounded-full flex items-center justify-center text-delft-600">
+                            <i data-lucide="milk" class="w-6 h-6"></i>
+                        </div>
                         <div class="text-left">
-                            <p class="font-bold text-slate-900 text-sm leading-none">Eiwit</p>
-                            <p class="text-[10px] text-slate-500">Per cup</p>
+                            <p class="font-bold text-slate-900 text-sm leading-tight">10 gram eiwit</p>
+                            <p class="font-bold text-slate-900 text-sm leading-tight">9 supplementen</p>
+                            <p class="font-bold text-slate-900 text-sm leading-tight">A2 melk</p>
                         </div>
                     </div>
-                    <div class="absolute bottom-1/4 -left-6 lg:-left-10 bg-white/90 backdrop-blur border border-slate-100 p-3 pr-5 rounded-2xl shadow-card flex items-center gap-3 animate-bounce hover:pause cursor-help" style="animation-duration: 5s; animation-delay: 1s;">
-                        <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600"><i data-lucide="qr-code" class="w-5 h-5"></i></div>
-                        <div class="text-left">
-                            <p class="font-bold text-slate-900 text-sm leading-none">Scanbaar</p>
-                            <p class="text-[10px] text-slate-500">Volledige info</p>
-                        </div>
                     </div>
-                </div>
             </div>
         </div>
     </header>
@@ -204,9 +203,7 @@
             <div class="grid md:grid-cols-2 gap-8 reveal delay-100">
                 <div class="group relative h-[400px] rounded-3xl overflow-hidden shadow-xl cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000" alt="Zorginstelling Interieur" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
-                    
                     <div class="absolute bottom-0 left-0 p-8 text-white">
                         <div class="flex items-center gap-2 mb-4">
                             <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-xs font-bold uppercase tracking-wider">Ouderenzorg</span>
@@ -225,9 +222,7 @@
 
                 <div class="group relative h-[400px] rounded-3xl overflow-hidden shadow-xl cursor-pointer">
                     <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1000" alt="Medisch Team" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
-                    
                     <div class="absolute bottom-0 left-0 p-8 text-white">
                         <div class="flex items-center gap-2 mb-4">
                             <span class="px-3 py-1 bg-white/20 backdrop-blur rounded-full text-xs font-bold uppercase tracking-wider">Oncologie</span>
