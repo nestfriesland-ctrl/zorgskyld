@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYLD Medisch Dossier 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            dark: '#0B1120',
+                            blue: '#0066FF',
+                            soft: '#F0F7FF',
+                            grey: '#F8FAFC'
+                        }
+                    },
+                    boxShadow: {
+                        'doc': '0 4px 20px -5px rgba(0,0,0,0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Print Specifieke Instellingen voor perfecte PDF */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; background: white; }
+            .no-print { display: none; }
+            .page-break { page-break-before: always; }
+            .a4-page { box-shadow: none; margin: 0; width: 100%; height: auto; border: none; }
+        }
+        
+        body { background: #e2e8f0; font-size: 11pt; line-height: 1.5; color: #1e293b; }
+        
+        .a4-page {
+            background: white;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 40px auto;
+            padding: 15mm 20mm;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header-stripe {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #0066FF 0%, #60A5FA 100%);
+        }
+        
+        .bg-pattern {
+            background-image: radial-gradient(#0066FF 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            opacity: 0.03;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print fixed top-0 left-0 w-full bg-brand-dark text-white p-4 text-center z-50 shadow-lg flex justify-center items-center gap-4">
+        <p>🖨️ <strong>Instructie:</strong> Druk op Ctrl+P / Cmd+P en kies "Opslaan als PDF". Zorg dat "Achtergrondafbeeldingen" aan staat.</p>
+        <button onclick="window.print()" class="bg-brand-blue px-4 py-1 rounded font-bold text-sm hover:bg-white hover:text-brand-blue transition">Print PDF</button>
+    </div>
+
+    <div class="a4-page">
+        <div class="header-stripe"></div>
+        <div class="absolute inset-0 bg-pattern pointer-events-none"></div>
+
+        <header class="flex justify-between items-end border-b border-gray-100 pb-8 mb-10 relative z-10">
+            <div>
+                <div class="flex items-center gap-2 mb-2">
+                    <div class="w-6 h-6 bg-brand-blue rounded flex items-center justify-center text-white">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <span class="font-black text-lg tracking-tight text-brand-dark">SKYLD<span class="text-brand-blue">.</span></span>
+                </div>
+                <h1 class="text-3xl font-black text-brand-dark mb-1">MEDISCH DOSSIER</h1>
+                <p class="text-slate-500 font-medium">Klinische Voeding & Interventie</p>
+            </div>
+            <div class="text-right">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-soft text-brand-blue text-xs font-bold uppercase tracking-wide rounded-full mb-2">
+                    Versie 1.0 (2026)
+                </div>
+                <p class="text-xs text-slate-400 font-mono">DOC-ID: SKY-26-MED</p>
+            </div>
+        </header>
+
+        <div class="bg-brand-grey p-6 rounded-xl border border-slate-200 mb-10 relative z-10">
+            <div class="grid grid-cols-2 gap-6">
+                <div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Product Classificatie</p>
+                    <p class="font-bold text-brand-dark">Klinische Voeding / Verrijkte IJs-matrix</p>
+                </div>
+                <div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Status</p>
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                        <p class="font-bold text-brand-dark">Innovatieve Voedingsinterventie</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="mb-10 relative z-10">
+            <h2 class="text-xl font-black text-brand-dark mb-4 flex items-center gap-2">
+                <span class="text-brand-blue">01.</span> Klinische Indicaties
+            </h2>
+            <p class="mb-4 text-slate-600">
+                SKYLD is ontwikkeld als gerichte voedingsinterventie voor patiënten met een verhoogd risico op malnutritie en spieratrofie. De unieke matrix (ijs) maakt toepassing mogelijk bij complexe pathologieën waar conventionele drinkvoeding faalt.
+            </p>
+            
+            <div class="grid grid-cols-2 gap-6 mt-6">
+                <div class="border-l-4 border-brand-blue pl-4">
+                    <h3 class="font-bold text-brand-dark mb-1">Sarcopenie & Frailty</h3>
+                    <p class="text-sm text-slate-500">Geriatrische patiënten met progressief verlies van spiermassa. Eiwit + HMB doorbreekt anabole resistentie.</p>
+                </div>
+                <div class="border-l-4 border-brand-blue pl-4">
+                    <h3 class="font-bold text-brand-dark mb-1">Oncologie & Cachexie</h3>
+                    <p class="text-sm text-slate-500">Patiënten met dysgeusie (smaalverandering). Koude textuur vergemakkelijkt inname.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100 flex gap-4 items-start">
+                <div class="mt-1 text-brand-blue">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                    <h4 class="font-bold text-brand-blue text-sm uppercase">Dysfagie & IDDSI Classificatie</h4>
+                    <p class="text-sm text-slate-600 mt-1">
+                        <strong>Bevroren:</strong> IDDSI Level 4 (Pureed) voor orale controle.<br>
+                        <strong>Smeltend:</strong> IDDSI Level 0/1 (Thin) voor veilige faryngeale fase zonder residu.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-8 relative z-10">
+            <h2 class="text-xl font-black text-brand-dark mb-6 flex items-center gap-2">
+                <span class="text-brand-blue">02.</span> Farmacologische & Nutritionele Deep-Dive
+            </h2>
+            
+            <div class="space-y-4">
+                <div class="flex gap-6 p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                    <div class="w-16 h-16 bg-brand-soft rounded-lg flex-shrink-0 flex items-center justify-center text-brand-blue font-black text-xl">HMB</div>
+                    <div>
+                        <h3 class="font-bold text-brand-dark text-lg">Beta-hydroxy-beta-methylbutyraat (1000mg)</h3>
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                            Remt de ubiquitine-proteasoom route (reductie proteolyse) en stimuleert de mTOR-pathway (eiwitsynthese). Klinisch bewezen effectief bij immobiele patiënten voor spierbehoud.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                    <div class="w-16 h-16 bg-green-50 rounded-lg flex-shrink-0 flex items-center justify-center text-green-600 font-black text-xl">A2</div>
+                    <div>
+                        <h3 class="font-bold text-brand-dark text-lg">A2-Eiwitprofiel (Schapenmelk)</h3>
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                            Bevat uitsluitend A2-beta-caseïne. Voorkomt vorming van inflammatoir peptide BCM-7 (vaak oorzaak van krampen bij koemelk). Homogene vetglobules zorgen voor snellere absorptie.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="flex gap-6 p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                    <div class="w-16 h-16 bg-purple-50 rounded-lg flex-shrink-0 flex items-center justify-center text-purple-600 font-black text-xl">D3</div>
+                    <div>
+                        <h3 class="font-bold text-brand-dark text-lg">Micronutriënten Matrix</h3>
+                        <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                            Synergie tussen <strong>Vitamine D3, K2 en Magnesium</strong>. Cruciaal voor calciumtransport naar botmatrix (K2) en spiercontractie (Magnesium).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="absolute bottom-10 left-0 right-0 px-20 text-center">
+            <p class="text-[10px] text-slate-400 border-t border-slate-100 pt-4">
+                Disclaimer: Dit dossier is uitsluitend bedoeld voor medische professionals. Voedingsinterventies dienen altijd plaats te vinden onder toezicht van een behandelend arts of diëtist.
+            </p>
+        </div>
+    </div>
+
+    <div class="a4-page page-break">
+        <div class="header-stripe"></div>
+        <div class="absolute inset-0 bg-pattern pointer-events-none"></div>
+
+        <section class="mb-12 mt-8 relative z-10">
+            <h2 class="text-xl font-black text-brand-dark mb-6 flex items-center gap-2">
+                <span class="text-brand-blue">03.</span> Therapietrouw & Acceptatie
+            </h2>
+            
+            <div class="grid grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold text-brand-dark mb-2">Doorbreken Smaakmoeheid</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Drinkvoeding stuit vaak op weerstand ('taste fatigue'). SKYLD maskeert bittere hydrolysaten en HMB door natuurlijke melkvetten. De associatie verandert van <strong>"Medicatie" naar "Traktatie"</strong>.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-brand-dark mb-2">Thermische Stimulatie</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Koude prikkels (-4°C) activeren TRPM8-receptoren in de orofarynx. Dit verkort de latentietijd van de slikreflex, wat de veiligheid bij lichte dysfagie verhoogt.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-brand-dark rounded-xl p-8 text-white text-center">
+                 <h3 class="text-lg font-bold mb-2">Patiënt Compliance Data</h3>
+                 <div class="flex justify-center gap-12 mt-6">
+                     <div>
+                         <div class="text-4xl font-black text-brand-blue mb-1">45%</div>
+                         <div class="text-xs text-slate-400 uppercase tracking-widest">Standaard ONS</div>
+                     </div>
+                     <div class="h-12 w-px bg-slate-700"></div>
+                     <div>
+                         <div class="text-4xl font-black text-brand-accent mb-1">92%</div>
+                         <div class="text-xs text-slate-400 uppercase tracking-widest">SKYLD Zorg</div>
+                     </div>
+                 </div>
+                 <p class="text-xs text-slate-500 mt-6 italic">* Interne pilotstudie (n=40) geriatrie.</p>
+            </div>
+        </section>
+
+        <section class="mb-12 relative z-10">
+            <h2 class="text-xl font-black text-brand-dark mb-6 flex items-center gap-2">
+                <span class="text-brand-blue">04.</span> Veiligheid & Herkomst
+            </h2>
+            <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                    <div class="mt-1 text-green-500"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <p class="text-sm text-slate-600"><strong>HACCP & ISO:</strong> Volledige ketenbeheersing en traceerbaarheid per batch.</p>
+                </li>
+                <li class="flex items-start gap-3">
+                    <div class="mt-1 text-green-500"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <p class="text-sm text-slate-600"><strong>Single-Source (Friesland):</strong> Melk van één gesloten kudde (400 Lacaune schapen) voor consistente nutriëntwaarden.</p>
+                </li>
+                <li class="flex items-start gap-3">
+                    <div class="mt-1 text-green-500"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                    <p class="text-sm text-slate-600"><strong>Validatie:</strong> Samenstelling getoetst door internisten en diëtisten.</p>
+                </li>
+            </ul>
+        </section>
+
+        <div class="border-t border-slate-200 pt-8 mt-auto relative z-10">
+            <div class="flex justify-between items-end">
+                <div>
+                    <p class="font-bold text-brand-dark">SKYLD Medical B.V.</p>
+                    <p class="text-sm text-slate-500">Hegedyk 21, 8405 GR Luxwoude</p>
+                    <p class="text-sm text-slate-500">T: 0513-241124 | E: info@skyld.nl</p>
+                </div>
+                <div class="text-right">
+                    <img src="https://placehold.co/150x60/ffffff/000000?text=SKYLD+Signatuur" alt="Handtekening" class="mb-2 opacity-50 mix-blend-multiply">
+                    <p class="text-xs font-bold text-brand-blue uppercase">Geautoriseerd Document</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
