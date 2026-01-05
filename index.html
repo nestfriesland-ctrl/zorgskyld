@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SKYLD Medical - Medische voeding heruitgevonden als ijs. Verhoogt therapietrouw en eiwitinname bij ouderen.">
-    <title>SKYLD Medical | Medische Innovatie & Smaak</title>
+    <meta name="description" content="SKYLD Medical - Klinische voeding vermomd als ijs. De nieuwe standaard tegen sarcopenie.">
+    <title>SKYLD Medical | De Nieuwe Standaard</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -17,187 +17,156 @@
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
                         brand: {
-                            dark: '#0f172a', 
-                            blue: '#0284c7', 
-                            medical: '#e0f2fe',
-                            accent: '#10b981' // Medisch Groen
+                            dark: '#0B1120', /* Dieper donkerblauw/zwart voor AURA stijl */
+                            blue: '#0066FF', /* Iets helderder blauw */
+                            softblue: '#EBF3FF',
+                            accent: '#10b981'
                         }
+                    },
+                    boxShadow: {
+                        'aura': '0 20px 40px -15px rgba(0, 102, 255, 0.2)',
+                        'float': '0 10px 30px -5px rgba(0,0,0,0.1)',
                     }
                 }
             }
         }
     </script>
     <style>
-        .medical-gradient { background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); }
+        /* Het subtiele AURA achtergrond patroon */
+        .bg-aura-pattern {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e8f0' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .aura-glow {
+            background: radial-gradient(circle at center, rgba(0, 102, 255, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+        
         .fade-in-up { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
         .fade-in-up.visible { opacity: 1; transform: translateY(0); }
-        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
     </style>
 </head>
-<body class="bg-white text-slate-900 leading-normal">
+<body class="bg-aura-pattern text-slate-900 leading-relaxed">
 
-    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-brand-blue rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-200">
-                    <i data-lucide="shield-plus" class="w-6 h-6"></i>
+                <div class="w-9 h-9 bg-brand-blue rounded-lg flex items-center justify-center text-white shadow-sm">
+                    <i data-lucide="shield-plus" class="w-5 h-5"></i>
                 </div>
-                <span class="font-black text-2xl tracking-tighter text-brand-dark">SKYLD<span class="text-brand-blue">ZORG</span></span>
+                <span class="font-black text-xl tracking-tighter text-brand-dark">SKYLD<span class="text-brand-blue">.</span></span>
             </div>
-            <div class="hidden md:flex gap-10 text-sm font-bold text-slate-600">
+            <div class="hidden md:flex gap-8 text-sm font-bold text-slate-600">
                 <a href="#waarom" class="hover:text-brand-blue transition-colors">De Noodzaak</a>
                 <a href="#wetenschap" class="hover:text-brand-blue transition-colors">Wetenschap</a>
-                <a href="#ervaringen" class="hover:text-brand-blue transition-colors">Ervaringen</a>
+                <a href="#proeven" class="hover:text-brand-blue transition-colors">Proefpakket</a>
             </div>
-            <a href="#contact" class="px-7 py-3 bg-brand-blue text-white text-sm font-extrabold rounded-full hover:bg-brand-dark transition-all transform hover:scale-105 shadow-xl shadow-blue-100">
-                Proefpakket Aanvragen
+            <a href="#contact" class="px-6 py-2.5 bg-brand-dark text-white text-sm font-bold rounded-lg hover:bg-brand-blue transition-all shadow-sm">
+                Contact
             </a>
         </div>
     </nav>
 
-    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 medical-gradient overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-            <div class="fade-in-up space-y-8 relative z-10">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-blue-100 rounded-full text-brand-blue text-xs font-black uppercase tracking-widest shadow-sm">
-                    <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span></span>
-                    Ontwikkeld door Internisten
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="fade-in-up space-y-8 relative z-10 text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-blue-100 rounded-full text-brand-blue text-[11px] font-bold uppercase tracking-widest shadow-sm">
+                    <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span></span>
+                    Nieuwe Standaard
                 </div>
-                <h1 class="text-6xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight">
-                    Zorg met een <br><span class="text-brand-blue">glimlach.</span>
+                
+                <h1 class="text-5xl lg:text-7xl font-black text-brand-dark leading-[1.1] tracking-tight">
+                    Klinische voeding, <br>
+                    <span class="text-brand-blue">vermomd</span> als ijs.
                 </h1>
-                <p class="text-xl text-slate-600 font-medium leading-relaxed max-w-lg">
-                    SKYLD is de eerste klinische voeding die patiënten <strong>vrijwillig</strong> eten. Een medische doorbraak verpakt als een heerlijk moment van rust. 
+                
+                <p class="text-lg text-slate-500 font-medium leading-relaxed max-w-lg">
+                    Sarcopenie bestrijden met smaak. De eerste medische voeding die patiënten <em>willen</em> eten. <strong>10g eiwit</strong> en <strong>1000mg HMB</strong> in een 125ml cup.
                 </p>
                 
-                <div class="flex flex-wrap gap-4">
-                    <button class="px-8 py-5 bg-brand-dark text-white font-black rounded-2xl shadow-2xl hover:bg-brand-blue transition-all flex items-center gap-3">
-                        <i data-lucide="stethoscope" class="w-5 h-5"></i>
-                        Voor Zorgprofessionals
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <button class="px-8 py-4 bg-brand-dark text-white font-bold rounded-xl shadow-lg hover:bg-brand-blue transition-all flex items-center gap-3">
+                        Informatie voor Diëtisten
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
                     </button>
-                    <button class="px-8 py-5 bg-white text-slate-700 border-2 border-slate-100 font-black rounded-2xl hover:bg-slate-50 transition-all flex items-center gap-3">
-                        <i data-lucide="file-text" class="w-5 h-5 text-brand-blue"></i>
-                        Medisch Dossier
+                    <button class="px-8 py-4 bg-white text-slate-700 border-2 border-slate-200 font-bold rounded-xl hover:border-brand-blue hover:text-brand-blue transition-all flex items-center gap-3">
+                        <i data-lucide="file-text" class="w-5 h-5"></i>
+                        Factsheet PDF
                     </button>
                 </div>
 
-                <div class="pt-8 grid grid-cols-3 gap-8 border-t border-slate-200">
+                <div class="pt-10 grid grid-cols-3 gap-8 border-t border-slate-200/60">
                     <div>
-                        <p class="text-4xl font-black text-brand-dark">10g</p>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">A2 Eiwit</p>
+                        <p class="text-4xl lg:text-5xl font-black text-brand-dark">92%</p>
+                        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mt-1">Compliance</p>
                     </div>
                     <div>
-                        <p class="text-4xl font-black text-brand-dark">100%</p>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Therapietrouw</p>
+                        <p class="text-4xl lg:text-5xl font-black text-brand-dark">A2</p>
+                        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mt-1">Oer-Eiwit</p>
                     </div>
                     <div>
-                        <p class="text-4xl font-black text-brand-dark">9</p>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Vitaminen</p>
+                        <p class="text-4xl lg:text-5xl font-black text-brand-dark">1.8d</p>
+                        <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mt-1">Kortere Ligduur</p>
                     </div>
                 </div>
             </div>
 
-            <div class="relative fade-in-up delay-200">
-                <div class="relative z-10 w-full aspect-square bg-white rounded-[3rem] shadow-aura border-[12px] border-white overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1581578017093-cd30fce4eeb7?auto=format&fit=crop&q=80&w=800" alt="Gelukkige patiënt geniet van SKYLD" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent"></div>
-                    <div class="absolute bottom-8 left-8 right-8 glass-card p-5 rounded-2xl shadow-xl">
-                        <div class="flex items-center gap-4">
-                            <div class="p-3 bg-brand-blue text-white rounded-xl"><i data-lucide="heart" class="w-6 h-6"></i></div>
-                            <div>
-                                <p class="text-brand-dark font-black">"Niet meer dwingen, maar trakteren."</p>
-                                <p class="text-xs font-bold text-slate-500">Kwaliteit van Leven staat voorop</p>
-                            </div>
+            <div class="relative fade-in-up delay-200 flex justify-center items-center lg:justify-end h-[500px] lg:h-[600px]">
+                
+                <div class="absolute inset-0 aura-glow rounded-full blur-3xl opacity-70 z-0 transform translate-x-10"></div>
+                
+                <div class="relative z-10 w-[90%] aspect-square rounded-full bg-white shadow-aura border-4 border-white flex items-center justify-center p-8">
+                    <img src="https://placehold.co/400x400/e0f2fe/0284c7?text=SKYLD+Cup+Image" alt="SKYLD IJs Cup" class="w-full h-full object-contain drop-shadow-xl transform hover:scale-105 transition-transform duration-500">
+                    
+                    <div class="absolute top-10 -right-6 bg-white p-3 rounded-2xl shadow-float flex items-center gap-3 animate-bounce hover:pause" style="animation-duration: 3s;">
+                        <div class="w-12 h-12 bg-brand-softblue rounded-full flex items-center justify-center text-brand-blue font-black text-lg">10g</div>
+                        <div>
+                            <p class="font-bold text-brand-dark leading-none">Eiwit</p>
+                            <p class="text-xs text-slate-400">Per cup</p>
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-10 -left-6 bg-white p-3 rounded-2xl shadow-float flex items-center gap-3 animate-bounce hover:pause" style="animation-duration: 3.5s; animation-delay: 0.5s;">
+                         <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600"><i data-lucide="qr-code" class="w-6 h-6"></i></div>
+                        <div>
+                            <p class="font-bold text-brand-dark leading-none">Scanbaar</p>
+                            <p class="text-xs text-slate-400">Volledige info</p>
                         </div>
                     </div>
                 </div>
-                <div class="absolute -top-10 -right-10 w-40 h-40 bg-brand-medical rounded-full blur-3xl opacity-50"></div>
-                <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
             </div>
         </div>
     </header>
 
-    <section id="waarom" class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
-                <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight uppercase">Harde feiten voor de specialist.</h2>
-                <p class="text-lg text-slate-500 font-medium leading-relaxed text-center">In de klinische praktijk telt alleen resultaat. SKYLD presteert waar traditionele supplementen falen.</p>
+    <section id="proeven" class="py-20 bg-brand-softblue relative overflow-hidden">
+        <div class="max-w-3xl mx-auto px-6 text-center relative z-10 fade-in-up">
+            <h2 class="text-3xl lg:text-4xl font-black text-brand-dark mb-6">Klaar om te proeven?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                Vraag een proefpakket aan voor uw instelling. Wij leveren diepvries direct tot in de keuken.
+            </p>
+            
+            <div class="bg-white p-2 rounded-2xl shadow-lg flex flex-col sm:flex-row gap-2 max-w-lg mx-auto">
+                <input type="email" placeholder="Zakelijk e-mailadres" class="flex-grow px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue text-slate-700">
+                <button class="px-8 py-3 bg-brand-dark text-white font-bold rounded-xl hover:bg-brand-blue transition-all">
+                    Aanvragen
+                </button>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 items-stretch">
-                <div class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 fade-in-up">
-                    <div class="inline-flex p-3 bg-red-100 text-red-600 rounded-xl mb-6"><i data-lucide="alert-circle"></i></div>
-                    <h3 class="text-2xl font-black mb-6">Het Supplementen-Dilemma</h3>
-                    <ul class="space-y-6">
-                        <li class="flex gap-4">
-                            <div class="mt-1"><i data-lucide="x-circle" class="text-red-400 w-5 h-5"></i></div>
-                            <div>
-                                <p class="font-bold text-slate-900 leading-none">Lage therapietrouw</p>
-                                <p class="text-sm text-slate-500 mt-1">Drinkvoeding wordt vaak weggegooid door 'chemische' smaakbeleving.</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-4">
-                            <div class="mt-1"><i data-lucide="x-circle" class="text-red-400 w-5 h-5"></i></div>
-                            <div>
-                                <p class="font-bold text-slate-900 leading-none">Spierafbraak (Sarcopenie)</p>
-                                <p class="text-sm text-slate-500 mt-1">Standaard voeding mist HMB om de spierafbraak bij inactiviteit te remmen.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="p-10 rounded-[2.5rem] bg-brand-medical border-2 border-brand-blue shadow-2xl shadow-blue-100 relative overflow-hidden fade-in-up delay-100">
-                    <div class="absolute top-6 right-6 px-4 py-1 bg-brand-blue text-white text-[10px] font-black rounded-full uppercase tracking-tighter">De Nieuwe Standaard</div>
-                    <div class="inline-flex p-3 bg-brand-blue text-white rounded-xl mb-6 shadow-lg shadow-blue-200"><i data-lucide="check-circle-2"></i></div>
-                    <h3 class="text-2xl font-black mb-6 text-brand-dark">De SKYLD Formule</h3>
-                    <ul class="space-y-6">
-                        <li class="flex gap-4">
-                            <div class="mt-1"><i data-lucide="check" class="text-brand-blue w-6 h-6"></i></div>
-                            <div>
-                                <p class="font-black text-brand-dark leading-none text-lg">HMB + 10g A2 Eiwit</p>
-                                <p class="text-sm text-slate-600 mt-1 font-medium italic">Dubbele actie: bouw spiermassa op én stop de afbraak.</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-4">
-                            <div class="mt-1"><i data-lucide="check" class="text-brand-blue w-6 h-6"></i></div>
-                            <div>
-                                <p class="font-black text-brand-dark leading-none text-lg">Natuurlijke Smaakacceptatie</p>
-                                <p class="text-sm text-slate-600 mt-1 font-medium italic">Geen medische nasmaak. Smelt weg als roomijs (IDDSI Level 0/1).</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="flex justify-center gap-6 mt-8 text-sm font-bold text-slate-500">
+                <span class="flex items-center gap-2"><i data-lucide="package" class="w-4 h-4"></i> Gratis Levering</span>
+                <span class="flex items-center gap-2"><i data-lucide="snowflake" class="w-4 h-4"></i> Diepvries Transport</span>
             </div>
         </div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white opacity-60 blur-3xl rounded-full z-0"></div>
     </section>
 
-    <section class="py-20 bg-brand-dark relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <h2 class="text-4xl font-black text-white mb-8 tracking-tight">Klaar om de zorgkwaliteit te verhogen?</h2>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" class="px-10 py-5 bg-brand-blue text-white font-black rounded-2xl hover:bg-sky-400 transition-all shadow-xl shadow-blue-900/40 uppercase tracking-widest text-sm">
-                    Direct Bestellen
-                </a>
-                <a href="tel:0513241124" class="px-10 py-5 bg-transparent text-white border-2 border-white/20 font-black rounded-2xl hover:bg-white/10 transition-all uppercase tracking-widest text-sm">
-                    Bel een Specialist
-                </a>
-            </div>
-        </div>
-        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-blue rounded-full blur-[120px] opacity-20 translate-x-1/2 -translate-y-1/2"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-400 rounded-full blur-[150px] opacity-10 -translate-x-1/2 translate-y-1/2"></div>
-    </section>
-
-    <footer class="bg-slate-50 py-16 border-t border-slate-100">
+    <footer class="bg-white py-12 border-t border-slate-100 bg-aura-pattern">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="flex justify-center items-center gap-3 mb-8">
-                <div class="w-8 h-8 bg-slate-300 rounded-lg flex items-center justify-center text-white"><i data-lucide="shield" class="w-5 h-5"></i></div>
-                <span class="font-black text-xl text-slate-400 tracking-tighter uppercase">SKYLD MEDICAL</span>
+            <div class="flex justify-center items-center gap-2 mb-6">
+                 <span class="font-black text-xl tracking-tighter text-brand-dark">SKYLD MEDICAL</span>
             </div>
-            <p class="text-slate-400 text-xs font-bold uppercase tracking-[0.2em] mb-4">&copy; 2026 Innovatie in de Zorg</p>
-            <div class="flex justify-center gap-8 text-slate-400 font-bold text-[10px] uppercase tracking-widest">
-                <span>HACCP Gecertificeerd</span>
-                <span>ISO 9001:2015</span>
-                <span>Lactosevrij Beschikbaar</span>
-            </div>
+            <p class="text-slate-400 text-xs font-bold uppercase tracking-[0.2em]">&copy; 2026 Klinische Innovatie</p>
         </div>
     </footer>
 
