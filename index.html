@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SKYLD Medical: Het wetenschappelijk onderbouwde alternatief voor drinkvoeding. Eiwitrijk ijs (10g) met HMB en A2 Schapenmelk. Speciaal ontwikkeld voor Sarcopenie, Dysfagie en Oncologie patiënten.">
-    <title>SKYLD Medical | Klinische Voeding bij Sarcopenie & Dysfagie</title>
+    <meta name="description" content="SKYLD Medical: Klinische voeding ontwikkeld door internisten. IJsmatrix met 12,3g Eiwit, Creatine, HMB en A2 Schapenmelk. Voor herstel bij Sarcopenie, Oncologie en Dysfagie.">
+    <title>SKYLD Medical | Klinische Voeding met Creatine & A2 Eiwit</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -17,7 +17,7 @@
       "@context": "https://schema.org",
       "@type": ["Product", "MedicalFood"],
       "name": "SKYLD Medical Protein Ice",
-      "description": "Klinische voeding in ijsvorm op basis van A2 schapenmelk en HMB, geoptimaliseerd voor sarcopenie en dysfagie.",
+      "description": "Klinische voeding in ijsvorm op basis van A2 schapenmelk, Creatine en HMB. Samengesteld door internisten.",
       "brand": {
         "@type": "Brand",
         "name": "SKYLD Medical"
@@ -32,7 +32,8 @@
       },
       "nutritionalInformation": {
          "@type": "NutritionInformation",
-         "proteinContent": "10 grams"
+         "proteinContent": "12.3 grams",
+         "servingSize": "100 g"
       }
     }
     </script>
@@ -79,7 +80,6 @@
         .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        /* Style voor voetnoten */
         .citation { vertical-align: super; font-size: 0.6em; color: #0284c7; font-weight: bold; text-decoration: none; margin-left: 2px; }
     </style>
 </head>
@@ -115,12 +115,20 @@
 
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
             <div class="reveal space-y-8 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-slate-200 rounded-full shadow-sm mb-4">
-                    <span class="flex h-2 w-2 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-delft-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-delft-600"></span>
-                    </span>
-                    <span class="text-xs font-bold text-slate-600 uppercase tracking-widest">Medical Food Innovation</span>
+                
+                <div class="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-slate-200 rounded-full shadow-sm">
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-delft-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-delft-600"></span>
+                        </span>
+                        <span class="text-xs font-bold text-slate-600 uppercase tracking-widest">Medical Food Innovation</span>
+                    </div>
+                    
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-delft-50 border border-delft-100 text-delft-800 rounded-full shadow-sm">
+                        <i data-lucide="stethoscope" class="w-4 h-4"></i>
+                        <span class="text-xs font-bold uppercase tracking-widest">Samengesteld door Internist</span>
+                    </div>
                 </div>
 
                 <h1 class="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight">
@@ -129,11 +137,11 @@
                 </h1>
 
                 <p class="text-lg lg:text-xl text-slate-500 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
-                    Dé evidence-based oplossing voor ondervoeding. Rijk aan <strong>HMB</strong> en <strong>A2-Schapenmelkeiwit</strong>. Verhoogt therapietrouw bij patiënten met kauw- en slikproblemen.
+                    Dé evidence-based oplossing voor ondervoeding. Rijk aan <strong>HMB</strong>, <strong>Creatine</strong> en <strong>A2-Schapenmelkeiwit</strong>. Verhoogt therapietrouw bij patiënten met kauw- en slikproblemen.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                    <a href="dossier.html" target="_blank" class="px-8 py-4 bg-delft-900 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl hover:bg-slate-800 transition-all hover:-translate-y-1 flex items-center justify-center gap-2 group">
+                    <a href="dossier.html" class="px-8 py-4 bg-delft-900 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl hover:bg-slate-800 transition-all hover:-translate-y-1 flex items-center justify-center gap-2 group">
                         Informatie voor Diëtisten 
                         <i data-lucide="file-text" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                     </a>
@@ -141,8 +149,8 @@
 
                 <div class="pt-8 border-t border-slate-200/60 flex items-center justify-center lg:justify-start gap-8 lg:gap-12">
                     <div>
-                        <p class="text-3xl font-bold text-slate-900 tracking-tight">10g</p>
-                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Eiwit per cup</p>
+                        <p class="text-3xl font-bold text-slate-900 tracking-tight">12,3g</p>
+                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Eiwit</p>
                     </div>
                     <div class="w-px h-10 bg-slate-300"></div>
                     <div>
@@ -151,8 +159,8 @@
                     </div>
                     <div class="w-px h-10 bg-slate-300"></div>
                     <div>
-                        <p class="text-3xl font-bold text-slate-900 tracking-tight">3g</p>
-                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">HMB<a href="#ref-1" class="citation">1</a></p>
+                        <p class="text-3xl font-bold text-slate-900 tracking-tight">1,2g</p>
+                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Creatine<a href="#ref-1" class="citation">1</a></p>
                     </div>
                 </div>
             </div>
@@ -177,7 +185,9 @@
             <div class="text-center mb-16 reveal">
                 <span class="text-delft-600 font-bold tracking-widest text-xs uppercase mb-2 block">Patiëntgroepen</span>
                 <h2 class="text-3xl md:text-5xl font-black text-slate-900">Klinische Toepassingen</h2>
-                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">SKYLD is specifiek ontwikkeld om tegemoet te komen aan de uitdagingen binnen complexe zorgsituaties.</p>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">
+                    SKYLD combineert voedingswetenschap met praktijkervaring. Ontwikkeld door internisten om tegemoet te komen aan complexe zorgvragen.
+                </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
@@ -187,11 +197,11 @@
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Sarcopenie & Frailty</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Effectieve interventie bij leeftijdsgerelateerd spierverlies. De toevoeging van <strong>HMB (β-hydroxy-β-methylbutyraat)</strong> remt proteolyse en stimuleert spiereiwitsynthese, zelfs bij bedlegerigheid<a href="#ref-1" class="citation">1</a>.
+                        Effectieve interventie bij leeftijdsgerelateerd spierverlies. De unieke combinatie van <strong>HMB</strong>, <strong>Creatine</strong> en <strong>Magnesium</strong> ondersteunt spierbehoud, energiehuishouding en fysieke prestaties bij ouderen.
                     </p>
                     <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Spierbehoud bij inactiviteit</li>
-                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Hoge eiwitdichtheid</li>
+                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Creatine verbetert cognitie</li>
+                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> 12,3g Eiwit per cup</li>
                     </ul>
                 </div>
 
@@ -201,7 +211,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Dysfagie (Slikproblemen)</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        De koude prikkel (thermische stimulatie) kan de slikreflex verbeteren. De smeltende textuur vermindert het risico op aspiratie in vergelijking met dunvloeibare dranken.
+                        De koude prikkel (thermische stimulatie) kan de slikreflex verbeteren. De smeltende textuur vermindert het risico op aspiratie. De A2-schapenmelk zorgt voor een romige, makkelijk slikbare structuur.
                     </p>
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Thermische stimulatie</li>
@@ -213,13 +223,13 @@
                     <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-delft-600 mb-6">
                         <i data-lucide="heart-pulse" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Oncologie</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Oncologie & Herstel</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Bij smaaksturing (metaalsmaak door chemotherapie) biedt ijs verlichting en neutralisatie. De A2-eiwitten uit schapenmelk zijn lichter verteerbaar, wat misselijkheid kan verminderen<a href="#ref-2" class="citation">2</a>.
+                        Bij smaaksturing (metaalsmaak) biedt ijs verlichting. Verrijkt met <strong>Vitamine D3</strong> (175% RI) en <strong>Vitamine E</strong> (antioxidant) om het immuunsysteem en celherstel te ondersteunen tijdens behandeling.
                     </p>
                     <ul class="space-y-2">
                         <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Maskeert metaalsmaak</li>
-                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Verminderde gastro-intestinale stress</li>
+                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Hoge micronutriënt dichtheid</li>
                     </ul>
                 </div>
             </div>
@@ -289,12 +299,6 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="mt-12 flex flex-wrap justify-center gap-8 md:gap-16 opacity-40 grayscale hover:grayscale-0 transition-all duration-500 reveal delay-200">
-                 <div class="h-8 font-black text-slate-900 text-xl flex items-center">HOF EN <span class="text-delft-600">HIEM</span></div>
-                 <div class="h-8 font-black text-slate-900 text-xl flex items-center">MED<span class="text-delft-600">CARE</span></div>
-                 <div class="h-8 font-black text-slate-900 text-xl flex items-center">VITAAL<span class="text-delft-600">THUIS</span></div>
-            </div>
         </div>
     </section>
 
@@ -306,7 +310,6 @@
                     <span class="font-bold text-delft-600 shrink-0">[1]</span>
                     <span>
                         <strong>Deutz, N. E., et al. (2013).</strong> Effect of β-hydroxy-β-methylbutyrate (HMB) on lean body mass during 10 days of bed rest in older adults. <em>Clinical Nutrition</em>.
-                        <br><span class="text-slate-400 italic">Conclusie: HMB beschermt spiermassa significant tijdens periodes van inactiviteit.</span>
                     </span>
                 </li>
                 <li id="ref-2" class="flex gap-3">
@@ -339,6 +342,29 @@
             <div class="flex justify-center gap-8 mt-10 text-xs font-bold text-slate-400 uppercase tracking-widest">
                 <span class="flex items-center gap-2"><i data-lucide="package-check" class="w-4 h-4"></i> Gratis Levering</span>
                 <span class="flex items-center gap-2"><i data-lucide="snowflake" class="w-4 h-4"></i> Diepvries Transport</span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="bg-white py-12 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center items-center gap-12 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                <div class="flex flex-col items-center gap-2">
+                     <div class="h-12 w-20 bg-blue-800 flex items-center justify-center text-yellow-400 text-xs font-bold rounded shadow-sm">
+                        EU FLAG
+                     </div>
+                     <div class="text-[10px] text-slate-600 font-bold uppercase leading-tight text-center">
+                         Europese Unie<br>Gefinancierd door<br>de Europese Unie
+                     </div>
+                </div>
+
+                <div class="h-10 flex items-center text-slate-800 font-bold text-lg uppercase tracking-tighter">
+                    Versnellings<span class="text-delft-600">Agenda</span>
+                </div>
+
+                <div class="h-10 flex items-center text-slate-600 font-bold text-2xl tracking-tighter">
+                    SNN
+                </div>
             </div>
         </div>
     </section>
