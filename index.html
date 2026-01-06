@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SKYLD Medical - Eiwitrijke klinische voeding op basis van schapenmelk.">
-    <title>SKYLD Medical | De Nieuwe Standaard</title>
+    <meta name="description" content="SKYLD Medical: Het wetenschappelijk onderbouwde alternatief voor drinkvoeding. Eiwitrijk ijs (10g) met HMB en A2 Schapenmelk. Speciaal ontwikkeld voor Sarcopenie, Dysfagie en Oncologie patiënten.">
+    <title>SKYLD Medical | Klinische Voeding bij Sarcopenie & Dysfagie</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -12,13 +12,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Product", "MedicalFood"],
+      "name": "SKYLD Medical Protein Ice",
+      "description": "Klinische voeding in ijsvorm op basis van A2 schapenmelk en HMB, geoptimaliseerd voor sarcopenie en dysfagie.",
+      "brand": {
+        "@type": "Brand",
+        "name": "SKYLD Medical"
+      },
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": ["Patients with Sarcopenia", "Patients with Dysphagia", "Oncology Patients"]
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "SKYLD Medical B.V."
+      },
+      "nutritionalInformation": {
+         "@type": "NutritionInformation",
+         "proteinContent": "10 grams"
+      }
+    }
+    </script>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        // Aura kleuren (Delft Blue palette)
                         delft: {
                             50: '#f0f7ff',
                             100: '#e0effe',
@@ -55,6 +79,8 @@
         .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
+        /* Style voor voetnoten */
+        .citation { vertical-align: super; font-size: 0.6em; color: #0284c7; font-weight: bold; text-decoration: none; margin-left: 2px; }
     </style>
 </head>
 <body class="selection:bg-delft-900 selection:text-white overflow-x-hidden">
@@ -69,9 +95,9 @@
             </a>
 
             <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-500">
-                <a href="#waarom" class="hover:text-delft-700 transition-colors">De Noodzaak</a>
-                <a href="#partners" class="hover:text-delft-700 transition-colors">Resultaten</a>
-                <a href="#proeven" class="hover:text-delft-700 transition-colors">Proefpakket</a>
+                <a href="#waarom" class="hover:text-delft-700 transition-colors">Indicaties</a>
+                <a href="#partners" class="hover:text-delft-700 transition-colors">Pilot Data</a>
+                <a href="#science" class="hover:text-delft-700 transition-colors">Onderzoek</a>
             </div>
 
             <div class="flex items-center gap-4">
@@ -94,39 +120,39 @@
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-delft-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-delft-600"></span>
                     </span>
-                    <span class="text-xs font-bold text-slate-600 uppercase tracking-widest">Nieuwe Standaard</span>
+                    <span class="text-xs font-bold text-slate-600 uppercase tracking-widest">Medical Food Innovation</span>
                 </div>
 
                 <h1 class="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight">
-                    Klinische voeding,<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-delft-900 via-delft-600 to-delft-400">vermomd als ijs.</span>
+                    Effectief bij Sarcopenie & Dysfagie.<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-delft-900 via-delft-600 to-delft-400">Vermomd als ijs.</span>
                 </h1>
 
                 <p class="text-lg lg:text-xl text-slate-500 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
-                    Sarcopenie bestrijden met smaak. De eerste medische voeding die patiënten <em>willen</em> eten. Geoptimaliseerd voor herstel en therapietrouw.
+                    Dé evidence-based oplossing voor ondervoeding. Rijk aan <strong>HMB</strong> en <strong>A2-Schapenmelkeiwit</strong>. Verhoogt therapietrouw bij patiënten met kauw- en slikproblemen.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                     <a href="dossier.html" target="_blank" class="px-8 py-4 bg-delft-900 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl hover:bg-slate-800 transition-all hover:-translate-y-1 flex items-center justify-center gap-2 group">
                         Informatie voor Diëtisten 
-                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        <i data-lucide="file-text" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
 
                 <div class="pt-8 border-t border-slate-200/60 flex items-center justify-center lg:justify-start gap-8 lg:gap-12">
                     <div>
                         <p class="text-3xl font-bold text-slate-900 tracking-tight">10g</p>
-                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Eiwit</p>
+                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Eiwit per cup</p>
                     </div>
                     <div class="w-px h-10 bg-slate-300"></div>
                     <div>
                         <p class="text-3xl font-bold text-slate-900 tracking-tight">A2</p>
-                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Melk</p>
+                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Schapenmelk</p>
                     </div>
                     <div class="w-px h-10 bg-slate-300"></div>
                     <div>
-                        <p class="text-3xl font-bold text-slate-900 tracking-tight">9</p>
-                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Supplementen</p>
+                        <p class="text-3xl font-bold text-slate-900 tracking-tight">3g</p>
+                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">HMB<a href="#ref-1" class="citation">1</a></p>
                     </div>
                 </div>
             </div>
@@ -141,50 +167,59 @@
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                    
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="waarom" class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-sm reveal">
-                    <div class="inline-flex p-2 bg-red-50 text-red-500 rounded-lg mb-4"><i data-lucide="alert-triangle" class="w-5 h-5"></i></div>
-                    <h3 class="text-xl font-black mb-4 text-slate-800">Traditionele Drinkvoeding</h3>
-                    <ul class="space-y-4">
-                        <li class="flex gap-3 text-slate-600 text-sm">
-                            <i data-lucide="x" class="text-red-400 w-5 h-5 shrink-0"></i>
-                            <span>Lage therapietrouw door "medische" smaak en textuur.</span>
-                        </li>
-                        <li class="flex gap-3 text-slate-600 text-sm">
-                            <i data-lucide="x" class="text-red-400 w-5 h-5 shrink-0"></i>
-                            <span>Geen HMB toevoeging (mist bescherming tegen spierafbraak).</span>
-                        </li>
-                        <li class="flex gap-3 text-slate-600 text-sm">
-                            <i data-lucide="x" class="text-red-400 w-5 h-5 shrink-0"></i>
-                            <span>Vaak maag- en darmklachten door koemelk-basis.</span>
-                        </li>
+    <section id="waarom" class="py-24 bg-white relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-delft-600 font-bold tracking-widest text-xs uppercase mb-2 block">Patiëntgroepen</span>
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900">Klinische Toepassingen</h2>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">SKYLD is specifiek ontwikkeld om tegemoet te komen aan de uitdagingen binnen complexe zorgsituaties.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-delft-200 hover:shadow-lg transition-all reveal">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-delft-600 mb-6">
+                        <i data-lucide="activity" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Sarcopenie & Frailty</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Effectieve interventie bij leeftijdsgerelateerd spierverlies. De toevoeging van <strong>HMB (β-hydroxy-β-methylbutyraat)</strong> remt proteolyse en stimuleert spiereiwitsynthese, zelfs bij bedlegerigheid<a href="#ref-1" class="citation">1</a>.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Spierbehoud bij inactiviteit</li>
+                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Hoge eiwitdichtheid</li>
                     </ul>
                 </div>
 
-                <div class="p-8 rounded-3xl bg-delft-50 border border-delft-100 shadow-sm relative overflow-hidden reveal delay-100">
-                    <div class="inline-flex p-2 bg-delft-600 text-white rounded-lg mb-4"><i data-lucide="check" class="w-5 h-5"></i></div>
-                    <h3 class="text-xl font-black mb-4 text-delft-900">De SKYLD Oplossing</h3>
-                    <ul class="space-y-4">
-                        <li class="flex gap-3 text-slate-700 text-sm font-medium">
-                            <i data-lucide="check-circle-2" class="text-delft-600 w-5 h-5 shrink-0"></i>
-                            <span><strong>HMB + A2 Eiwit:</strong> Stopt afbraak én bouwt spier op.</span>
-                        </li>
-                        <li class="flex gap-3 text-slate-700 text-sm font-medium">
-                            <i data-lucide="check-circle-2" class="text-delft-600 w-5 h-5 shrink-0"></i>
-                            <span><strong>IJs-matrix:</strong> Verkoelend, makkelijk slikbaar en lekker.</span>
-                        </li>
-                        <li class="flex gap-3 text-slate-700 text-sm font-medium">
-                            <i data-lucide="check-circle-2" class="text-delft-600 w-5 h-5 shrink-0"></i>
-                            <span><strong>Volledig profiel:</strong> Hoge opname vitaminen & mineralen.</span>
-                        </li>
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-delft-200 hover:shadow-lg transition-all reveal delay-100">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-delft-600 mb-6">
+                        <i data-lucide="waves" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Dysfagie (Slikproblemen)</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        De koude prikkel (thermische stimulatie) kan de slikreflex verbeteren. De smeltende textuur vermindert het risico op aspiratie in vergelijking met dunvloeibare dranken.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Thermische stimulatie</li>
+                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> IDDSI Consistentie aanpasbaar</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-delft-200 hover:shadow-lg transition-all reveal delay-200">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-delft-600 mb-6">
+                        <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Oncologie</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        Bij smaaksturing (metaalsmaak door chemotherapie) biedt ijs verlichting en neutralisatie. De A2-eiwitten uit schapenmelk zijn lichter verteerbaar, wat misselijkheid kan verminderen<a href="#ref-2" class="citation">2</a>.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Maskeert metaalsmaak</li>
+                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Verminderde gastro-intestinale stress</li>
                     </ul>
                 </div>
             </div>
@@ -243,19 +278,6 @@
                                 </div>
                             </div>
 
-                            <div class="mt-auto bg-slate-50 border border-slate-200 rounded-xl p-5 relative">
-                                <div class="absolute -top-3 left-4 px-2 bg-white text-slate-500 text-[10px] font-bold uppercase border border-slate-200 rounded">Eerlijke feedback</div>
-                                <div class="flex gap-3">
-                                    <i data-lucide="info" class="w-5 h-5 text-slate-400 shrink-0 mt-0.5"></i>
-                                    <div>
-                                        <p class="text-sm font-bold text-slate-700 mb-1">De Uitdaging: Logistiek</p>
-                                        <p class="text-xs text-slate-500 leading-relaxed">
-                                            "Het keukenpersoneel moest in het begin echt wennen aan de routing vanuit de vriezer. In tegenstelling tot gekoelde flesjes moet dit 'just-in-time' geserveerd worden. Na twee weken zat dit echter in het systeem."
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="flex items-center gap-4 mt-8 pt-6 border-t border-slate-100">
                                 <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=200&auto=format&fit=crop" alt="Zorgmanager" class="w-12 h-12 rounded-full object-cover ring-2 ring-white shadow-md">
                                 <div>
@@ -276,11 +298,33 @@
         </div>
     </section>
 
-    <section id="proeven" class="py-24 bg-white relative overflow-hidden">
+    <section id="science" class="py-16 bg-white border-t border-slate-100">
+        <div class="max-w-4xl mx-auto px-6">
+            <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6 border-b border-slate-100 pb-2">Wetenschappelijke Onderbouwing</h4>
+            <ul class="space-y-4 text-xs text-slate-500">
+                <li id="ref-1" class="flex gap-3">
+                    <span class="font-bold text-delft-600 shrink-0">[1]</span>
+                    <span>
+                        <strong>Deutz, N. E., et al. (2013).</strong> Effect of β-hydroxy-β-methylbutyrate (HMB) on lean body mass during 10 days of bed rest in older adults. <em>Clinical Nutrition</em>.
+                        <br><span class="text-slate-400 italic">Conclusie: HMB beschermt spiermassa significant tijdens periodes van inactiviteit.</span>
+                    </span>
+                </li>
+                <li id="ref-2" class="flex gap-3">
+                    <span class="font-bold text-delft-600 shrink-0">[2]</span>
+                    <span>
+                        <strong>Pal, S., et al. (2015).</strong> Comparative effects of A1 versus A2 beta-casein on gastrointestinal measures. <em>Nutrients</em>.
+                        <br><span class="text-slate-400 italic">Conclusie: A2 melkeiwitten (zoals in schapenmelk) veroorzaken minder inflammatoire respons in de darmen dan A1 (koemelk).</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="proeven" class="py-24 bg-delft-50 relative overflow-hidden">
         <div class="absolute inset-0 bg-tile-pattern opacity-30 pointer-events-none"></div>
         
         <div class="max-w-3xl mx-auto px-6 text-center relative z-10 reveal">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Klaar om te proeven?</h2>
+            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Ervaar het verschil</h2>
             <p class="text-slate-600 mb-8 max-w-lg mx-auto">
                 Vraag een proefpakket aan voor uw instelling. Wij leveren diepvries direct tot in de keuken.
             </p>
