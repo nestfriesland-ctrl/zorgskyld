@@ -62,7 +62,13 @@
             background-image: linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
             background-size: 40px 40px;
         }
-        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        /* Aangepast glaseffect: meer transparantie, hogere blur en een subtiele witte rand */
+        .glass-nav { 
+            background: rgba(255, 255, 255, 0.7); 
+            backdrop-filter: blur(16px); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .citation { vertical-align: super; font-size: 0.6em; color: #0284c7; font-weight: bold; text-decoration: none; margin-left: 2px; }
@@ -106,7 +112,7 @@
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-delft-400 opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-delft-600"></span>
                         </span>
-                        <span class="text-xs font-bold text-slate-600 uppercase tracking-widest">Medical Food Innovation</span>
+                        <span class="text-xs font-bold text-slate-600 uppercase tracking-widest">Effectief bij Sarcopenie & Dysfagie</span>
                     </div>
                     
                     <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-delft-50 border border-delft-100 text-delft-800 rounded-full shadow-sm">
@@ -116,8 +122,8 @@
                 </div>
 
                 <h1 class="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight">
-                    Effectief bij Sarcopenie & Dysfagie.<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-delft-900 via-delft-600 to-delft-400">Vermomd als ijs.</span>
+                    Klinische bijvoeding.<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-delft-900 via-delft-600 to-delft-400">Vermomd als romig ijs.</span>
                 </h1>
 
                 <p class="text-lg lg:text-xl text-slate-500 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
@@ -126,7 +132,7 @@
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                     <a href="dossier.html" class="px-8 py-4 bg-delft-900 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl hover:bg-slate-800 transition-all hover:-translate-y-1 flex items-center justify-center gap-2 group">
-                        Bekijk de Factsheet 
+                        Informatie voor diëtisten
                         <i data-lucide="file-text" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
@@ -226,10 +232,10 @@
                             </div>
 
                             <div class="flex items-center gap-4 mt-8 pt-6 border-t border-slate-100">
-                                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=200&auto=format&fit=crop" alt="Zorgmanager" class="w-12 h-12 rounded-full object-cover ring-2 ring-white shadow-md">
+                                <div class="w-2 h-12 bg-delft-500 rounded-full"></div>
                                 <div>
-                                    <p class="font-bold text-slate-900 text-sm">R. Oosterhoff</p>
-                                    <p class="text-xs text-slate-500">Locatiemanager Zorg</p>
+                                    <p class="font-bold text-slate-900 text-xl tracking-tight">R. Oosterhoff</p>
+                                    <p class="text-base text-delft-600 font-medium">Locatiemanager Zorg</p>
                                 </div>
                             </div>
                         </div>
@@ -302,7 +308,7 @@
                 Wij geloven in persoonlijk contact. Wilt u een proeverij organiseren voor uw team of bewoners? Laat uw nummer achter, dan bellen wij u binnen 24 uur terug.
             </p>
 
-            <div class="bg-white p-2 rounded-2xl shadow-xl shadow-delft-900/5 flex flex-col sm:flex-row gap-2 max-w-lg mx-auto transform hover:scale-[1.01] transition-transform border border-slate-200">
+            <div class="bg-white p-2 rounded-2xl shadow-glow border-2 border-delft-300 flex flex-col sm:flex-row gap-2 max-w-lg mx-auto transform hover:scale-[1.01] transition-transform">
                 <form action="https://formspree.io/f/xbjnqqlg" method="POST" class="flex w-full gap-2">
                     <input type="tel" name="telefoonnummer" placeholder="Uw telefoonnummer" required class="flex-grow px-6 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-delft-500/20 text-slate-700 placeholder:text-slate-400 bg-transparent">
                     <button type="submit" class="px-8 py-4 bg-delft-900 text-white font-bold rounded-xl hover:bg-delft-700 transition-colors whitespace-nowrap">
