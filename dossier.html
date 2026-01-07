@@ -3,423 +3,490 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SKYLD Medical: Klinische voeding ontwikkeld door internisten. IJsmatrix met 12,3g Eiwit, Creatine, HMB en A2 Schapenmelk.">
-    <title>SKYLD Medical | Klinische Voeding met Creatine & A2 Eiwit</title>
+    <meta name="description" content="SKYLD Factsheet: Medische specificaties. 9,8g Eiwit & 960mg Creatine per cup (80g). Unieke A2-Schapenmelk matrix met HMB. Indicaties: Sarcopenie, Oncologie, Dysfagie.">
+    <title>SKYLD Factsheet | Nutriënten, Ingrediënten & Claims</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": ["Product", "MedicalFood"],
-      "name": "SKYLD Medical Protein Ice",
-      "brand": { "@type": "Brand", "name": "SKYLD Medical" },
-      "manufacturer": { "@type": "Organization", "name": "SKYLD Medical B.V." },
-      "nutritionalInformation": { "@type": "NutritionInformation", "proteinContent": "12.3 grams", "servingSize": "100 g" }
+      "@type": ["MedicalWebPage", "Product"],
+      "name": "SKYLD Clinical Protein Ice",
+      "audience": "Healthcare Professionals",
+      "description": "Klinische voeding (FSMP) op basis van Schapenmelk, Creatine en HMB.",
+      "brand": "SKYLD Medical",
+      "ingredients": "Schapenmelk (63,6%), Wei Eiwit Isolaat (9,5%), Creatine, HMB, Vitaminen",
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "servingSize": "80 g",
+        "calories": "133 kcal",
+        "proteinContent": "9.8 g",
+        "fatContent": "4.3 g",
+        "carbohydrateContent": "13.4 g"
+      }
     }
     </script>
 
     <script>
-        // Start altijd bovenaan bij refresh
-        if (history.scrollRestoration) {
-            history.scrollRestoration = 'manual';
-        } else {
-            window.onbeforeunload = function () {
-                window.scrollTo(0, 0);
-            }
-        }
-
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    letterSpacing: {
+                        tighter: '-0.04em',
+                        tight: '-0.02em',
+                        normal: '0',
+                        wide: '0.02em',
+                        wider: '0.05em',
+                        widest: '0.1em',
+                    },
                     colors: {
                         delft: {
-                            50: '#f0f7ff', 100: '#e0effe', 200: '#bae6fd', 300: '#7dd3fc', 400: '#38bdf8',
-                            500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 900: '#0c4a6e',
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bae6fd',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            950: '#082f49',
                         },
+                        slate: {
+                            850: '#151f32', 
+                        }
                     },
                     backgroundImage: {
                         'grid-pattern': "linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px)",
-                    },
-                    backgroundSize: {
-                        'grid-pattern': '40px 40px'
-                    },
-                    animation: { 'float': 'float 6s ease-in-out infinite' },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    },
-                    boxShadow: {
-                        'glow': '0 0 60px -15px rgba(14, 165, 233, 0.5), 0 0 20px -5px rgba(14, 165, 233, 0.3)',
-                        'card': '0 10px 40px -10px rgba(0,0,0,0.08)'
                     }
                 }
             }
         }
     </script>
     <style>
-        body { 
-            background-color: #f8fafc; 
-            color: #0f172a; 
-            background-image: linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px), linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        .glass-nav { 
-            background: rgba(255, 255, 255, 0.6); 
-            backdrop-filter: blur(20px); 
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-        }
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .citation { vertical-align: super; font-size: 0.6em; color: #0284c7; font-weight: bold; text-decoration: none; margin-left: 2px; }
+        body { font-feature-settings: "cv11", "ss01"; }
+        .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.6); }
+        .table-row-hover:hover td { background-color: #f8fafc; }
+        .technical-table td { padding: 0.875rem 1.25rem; border-bottom: 1px solid #e2e8f0; font-size: 0.875rem; color: #334155; vertical-align: middle; }
+        .technical-table th { padding: 0.875rem 1.25rem; text-align: left; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; font-weight: 600; background-color: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+        .technical-table tr:last-child td { border-bottom: none; }
     </style>
 </head>
-<body class="selection:bg-delft-900 selection:text-white overflow-x-hidden">
+<body class="bg-white text-slate-900 selection:bg-delft-100 selection:text-delft-900">
 
     <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2 group">
-                <div class="w-9 h-9 bg-delft-900 text-white rounded-lg flex items-center justify-center shadow-lg shadow-delft-900/20 group-hover:scale-105 transition-transform">
-                    <i data-lucide="shield-half" class="w-5 h-5 stroke-[2]"></i>
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-delft-950 text-white rounded-md flex items-center justify-center shadow-lg shadow-delft-900/10">
+                    <i data-lucide="file-bar-chart-2" class="w-4 h-4 stroke-[1.5]"></i>
                 </div>
-                <span class="font-bold text-xl tracking-tighter text-slate-900">SKYLD<span class="text-delft-600">ZORG</span></span>
+                <div class="flex flex-col">
+                    <span class="font-semibold text-lg tracking-tight text-slate-900 leading-none">SKYLD<span class="text-delft-600">MEDICAL</span></span>
+                    <span class="text-[9px] uppercase tracking-[0.2em] text-slate-400 font-medium pt-0.5">Product Monograph</span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex gap-8 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                <a href="#matrix" class="hover:text-delft-600 transition-colors">Nutriënten</a>
+                <a href="#ingredients" class="hover:text-delft-600 transition-colors">Ingrediënten</a>
+                <a href="#claims" class="hover:text-delft-600 transition-colors">Substantiatie</a>
+            </div>
+
+            <a href="#" class="hidden sm:flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-200 text-slate-600 text-xs font-semibold rounded-full hover:bg-slate-100 hover:text-slate-900 transition-all hover:border-slate-300 shadow-sm">
+                <i data-lucide="download" class="w-3.5 h-3.5 stroke-[1.5]"></i> PDF Download
             </a>
-
-            <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-500">
-                <a href="#praktijk" class="hover:text-delft-700 transition-colors">Praktijkcase</a>
-                <a href="#waarom" class="hover:text-delft-700 transition-colors">Indicaties</a>
-                <a href="#proeven" class="hover:text-delft-700 transition-colors">Contact</a>
-            </div>
-
-            <div class="flex items-center gap-4">
-                <a href="#proeven" class="hidden sm:flex px-6 py-2.5 bg-delft-900 text-white text-xs font-bold tracking-wide uppercase rounded-full hover:bg-delft-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-                    Proefpakket
-                </a>
-            </div>
         </div>
     </nav>
 
-    <header class="relative pt-32 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
-        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-b from-delft-200/40 to-transparent rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 z-0 pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-blue-100/50 to-transparent rounded-full blur-[80px] translate-y-1/3 -translate-x-1/4 z-0 pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
-            <div class="reveal space-y-8 text-center lg:text-left">
-                
-                <div class="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-slate-200 rounded-full shadow-sm">
-                        <span class="flex h-2 w-2 relative">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-delft-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-delft-600"></span>
-                        </span>
-                        <span class="text-xs font-bold text-slate-600 uppercase tracking-widest">Effectief bij Sarcopenie & Dysfagie</span>
-                    </div>
-                    
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-delft-50 border border-delft-100 text-delft-800 rounded-full shadow-sm">
-                        <i data-lucide="stethoscope" class="w-4 h-4"></i>
-                        <span class="text-xs font-bold uppercase tracking-widest">Samengesteld door Internist</span>
-                    </div>
+    <header class="pt-36 pb-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-[size:32px_32px] [mask-image:linear-gradient(to_bottom,white,transparent)] pointer-events-none"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-b from-delft-50/50 to-transparent rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16 items-start relative z-10">
+            <div class="lg:col-span-7 space-y-8">
+                <div class="inline-flex items-center gap-2.5 px-3 py-1.5 bg-white border border-slate-200 shadow-sm rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-delft-500 animate-pulse"></span>
+                    <span class="text-xs font-semibold text-slate-600 tracking-wide uppercase">Evidence-Based Nutrition</span>
                 </div>
-
-                <h1 class="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.05] tracking-tight">
-                    Klinische bijvoeding.<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-delft-900 via-delft-600 to-delft-400">Vermomd als romig ijs.</span>
+                
+                <h1 class="text-5xl sm:text-6xl font-semibold tracking-tighter text-slate-900 leading-[1.05]">
+                    Optimale densiteit<br>
+                    per <span class="text-transparent bg-clip-text bg-gradient-to-r from-delft-700 to-delft-500">80g Serving.</span>
                 </h1>
-
-                <p class="text-lg lg:text-xl text-slate-500 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
-                    Dé evidence-based oplossing voor ondervoeding. Rijk aan <strong>HMB</strong>, <strong>Creatine</strong> en <strong>A2-Schapenmelkeiwit</strong>. Verhoogt therapietrouw bij patiënten met kauw- en slikproblemen.
+                
+                <p class="text-lg text-slate-500 max-w-xl leading-relaxed font-normal">
+                    SKYLD is geconcentreerd om met een kleiner volume maximale impact te maken. Essentieel voor patiënten met verminderde eetlust. Bevat <span class="text-slate-900 font-medium">Creatine</span>, <span class="text-slate-900 font-medium">HMB</span> en een <span class="text-slate-900 font-medium">A2-Eiwitmatrix</span>.
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                    <a href="dossier.html" class="px-8 py-4 bg-delft-900 text-white font-bold text-sm rounded-xl shadow-lg hover:shadow-xl hover:bg-slate-800 transition-all hover:-translate-y-1 flex items-center justify-center gap-2 group">
-                        Informatie voor diëtisten
-                        <i data-lucide="file-text" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                    <div class="p-4 bg-white border border-slate-200 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] group hover:border-delft-200 transition-colors">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="p-2 bg-delft-50 text-delft-600 rounded-lg group-hover:bg-delft-100 transition-colors">
+                                <i data-lucide="scale" class="w-4 h-4 stroke-[1.5]"></i>
+                            </div>
+                            <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Portie</span>
+                        </div>
+                        <p class="text-xl font-semibold text-slate-900 tracking-tight">80 gram</p>
+                    </div>
 
-                <div class="pt-8 border-t border-slate-200/60 flex items-center justify-center lg:justify-start gap-8 lg:gap-12">
-                    <div>
-                        <p class="text-3xl font-bold text-slate-900 tracking-tight">12,3g</p>
-                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Eiwit</p>
+                    <div class="p-4 bg-white border border-slate-200 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] group hover:border-delft-200 transition-colors">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="p-2 bg-delft-50 text-delft-600 rounded-lg group-hover:bg-delft-100 transition-colors">
+                                <i data-lucide="zap" class="w-4 h-4 stroke-[1.5]"></i>
+                            </div>
+                            <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Creatine</span>
+                        </div>
+                        <p class="text-xl font-semibold text-slate-900 tracking-tight">960 mg</p>
                     </div>
-                    <div class="w-px h-10 bg-slate-300"></div>
-                    <div>
-                        <p class="text-3xl font-bold text-slate-900 tracking-tight">A2</p>
-                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Schapenmelk</p>
-                    </div>
-                    <div class="w-px h-10 bg-slate-300"></div>
-                    <div>
-                        <p class="text-3xl font-bold text-slate-900 tracking-tight">1,2g</p>
-                        <p class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Creatine</p>
+
+                    <div class="p-4 bg-white border border-slate-200 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] group hover:border-delft-200 transition-colors">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="p-2 bg-delft-50 text-delft-600 rounded-lg group-hover:bg-delft-100 transition-colors">
+                                <i data-lucide="droplet" class="w-4 h-4 stroke-[1.5]"></i>
+                            </div>
+                            <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Eiwit</span>
+                        </div>
+                        <p class="text-xl font-semibold text-slate-900 tracking-tight">9,8 gram</p>
                     </div>
                 </div>
             </div>
 
-            <div id="product" class="reveal delay-100 relative h-[600px] lg:h-[800px] flex items-center justify-center">
-                <div class="absolute w-[600px] h-[600px] bg-gradient-to-r from-delft-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-                
-                <div class="relative w-[380px] h-[380px] lg:w-[550px] lg:h-[550px] group animate-float z-20">
-                    <div class="absolute inset-0 bg-white rounded-full shadow-glow border-4 border-white overflow-hidden transform transition-transform duration-700">
-                        <video class="w-full h-full object-cover scale-105" autoplay loop muted playsinline>
-                            <source src="assets/Aspect_Ratio_Video_Generation.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+            <div class="lg:col-span-5 relative mt-8 lg:mt-0">
+                <div class="absolute -inset-4 bg-gradient-to-r from-delft-100 to-slate-100 rounded-[2rem] blur-2xl -z-10 opacity-50"></div>
+                <div class="bg-slate-900 text-white p-8 rounded-2xl shadow-2xl ring-1 ring-white/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-32 bg-delft-600 rounded-full blur-[80px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+                    
+                    <div class="flex justify-between items-baseline mb-8 border-b border-slate-700 pb-4">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Specificaties</h3>
+                        <span class="text-xs font-medium text-slate-500">Per Cup (80g)</span>
+                    </div>
+
+                    <div class="space-y-5">
+                        <div class="flex justify-between items-center group">
+                            <span class="text-sm font-medium text-slate-400 group-hover:text-slate-300 transition-colors">Energie</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-lg font-semibold tracking-tight text-white">133</span>
+                                <span class="text-xs text-slate-500 font-medium">kcal</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center group">
+                            <span class="text-sm font-medium text-slate-400 group-hover:text-slate-300 transition-colors">Eiwit <span class="text-[10px] text-delft-500 ml-1">ISOLAAT</span></span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-lg font-semibold tracking-tight text-delft-400">9,8</span>
+                                <span class="text-xs text-slate-500 font-medium">g</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center group">
+                            <span class="text-sm font-medium text-slate-400 group-hover:text-slate-300 transition-colors">Creatine</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-lg font-semibold tracking-tight text-delft-400">960</span>
+                                <span class="text-xs text-slate-500 font-medium">mg</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center group">
+                            <span class="text-sm font-medium text-slate-400 group-hover:text-slate-300 transition-colors">Vitamine D3</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-lg font-semibold tracking-tight text-white">7,0</span>
+                                <span class="text-xs text-slate-500 font-medium">µg</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-slate-800">
+                        <button class="w-full py-3.5 bg-white text-slate-900 font-semibold rounded-lg hover:bg-delft-50 transition-all text-xs uppercase tracking-wide flex items-center justify-center gap-2 group">
+                            Sample Aanvragen <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="praktijk" class="py-24 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
-            
-            <div class="reveal">
-                <div class="text-center mb-16">
-                    <span class="text-delft-600 font-bold tracking-widest text-xs uppercase mb-2 block">Resultaten uit de praktijk</span>
-                    <h2 class="text-3xl md:text-5xl font-black text-slate-900">Hof en Hiem <span class="text-slate-400 font-light">| Locatie Vegelinstate</span></h2>
+    <section id="matrix" class="py-24 border-t border-slate-100 bg-slate-50/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-2xl font-semibold text-slate-900 tracking-tight">Nutriënten Matrix</h2>
+                    <p class="text-slate-500 mt-2 text-sm">Vergelijking per 100g en per klinische portie (80g).</p>
                 </div>
-
-                <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
-                    <div class="grid lg:grid-cols-2">
-                        <div class="relative h-[400px] lg:h-auto bg-slate-200 group overflow-hidden">
-                            <img src="assets/hofenhiemoudeman.jpg" 
-                                 alt="Bewoner Hof en Hiem" 
-                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-                            
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
-                            
-                            <div class="absolute bottom-6 left-6 flex items-center gap-3">
-                                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-delft-600 shadow-lg">
-                                    <i data-lucide="map-pin" class="w-6 h-6"></i>
-                                </div>
-                                <div class="text-white">
-                                    <p class="font-bold text-lg leading-none">Joure</p>
-                                    <p class="text-slate-300 text-sm">Friesland</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-8 lg:p-12 flex flex-col justify-center">
-                            <div class="flex items-center gap-2 mb-6">
-                                <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase tracking-wide">Succesvolle Pilot</span>
-                                <span class="text-slate-400 text-sm">3 maanden</span>
-                            </div>
-
-                            <h3 class="text-2xl font-bold text-slate-900 mb-4">"Een oplossing voor de pillen-strijd."</h3>
-                            
-                            <p class="text-slate-600 mb-6 leading-relaxed">
-                                Bij Vegelinstate zagen we twee grote uitdagingen bij onze kwetsbare bewoners: <strong>moeite met het slikken van grote vitaminepillen</strong> en een <strong>afnemende spiermassa</strong> (sarcopenie). Reguliere drinkvoeding stuitte vaak op weerstand door de medische smaak.
-                            </p>
-                            <p class="text-slate-600 mb-8 leading-relaxed">
-                                We introduceerden SKYLD als 'toetje'. Omdat het alle essentiële vitaminen (D3, K2, E) en eiwitten bevat, konden we stoppen met losse supplementen. De bewoners ervaren het als een traktatie, niet als medicatie.
-                            </p>
-
-                            <div class="grid grid-cols-2 gap-4 mb-8">
-                                <div class="p-4 bg-delft-50 rounded-xl border border-delft-100">
-                                    <div class="flex items-center gap-2 mb-2 text-delft-600">
-                                        <i data-lucide="smile" class="w-5 h-5"></i>
-                                        <span class="font-bold text-sm">Hoge Acceptatie</span>
-                                    </div>
-                                    <p class="text-xs text-slate-600 leading-snug">"De bakjes gaan helemaal leeg omdat het echt lekker is."</p>
-                                </div>
-                                <div class="p-4 bg-delft-50 rounded-xl border border-delft-100">
-                                    <div class="flex items-center gap-2 mb-2 text-delft-600">
-                                        <i data-lucide="pill-off" class="w-5 h-5"></i>
-                                        <span class="font-bold text-sm">Minder Pillen</span>
-                                    </div>
-                                    <p class="text-xs text-slate-600 leading-snug">"Vervangt losse supplementen. Geen slikproblemen meer."</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center gap-4 mt-8 pt-6 border-t border-slate-100">
-                                <div class="w-2 h-12 bg-delft-500 rounded-full"></div>
-                                <div>
-                                    <p class="font-bold text-slate-900 text-xl tracking-tight">R. Oosterhoff</p>
-                                    <p class="text-base text-delft-600 font-medium">Locatiemanager Zorg</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="hidden md:block">
+                     <div class="flex gap-2 text-[10px] uppercase font-bold text-slate-400 tracking-widest">
+                        <span class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-slate-200"></div> Standaard</span>
+                        <span class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-delft-500"></div> Skyld</span>
+                     </div>
                 </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-slate-200 overflow-hidden ring-1 ring-slate-900/5">
+                <table class="w-full technical-table text-left border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="w-[35%]">Component</th>
+                            <th class="w-[25%]">Per 100g</th>
+                            <th class="w-[25%] bg-delft-50/50 text-delft-900 border-l border-delft-100">Per Portie (80g)</th>
+                            <th class="w-[15%] text-right">% RI* (100g)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr class="table-row-hover transition-colors">
+                            <td class="font-medium">Energie</td>
+                            <td class="font-mono text-slate-500">695 kJ / 166 kcal</td>
+                            <td class="bg-delft-50/30 border-l border-delft-100/50 font-mono font-semibold text-slate-900">556 kJ / 133 kcal</td>
+                            <td class="text-right font-mono text-slate-400">-</td>
+                        </tr>
+                        <tr class="table-row-hover transition-colors">
+                            <td class="font-medium">Vetten</td>
+                            <td class="font-mono text-slate-500">5,4 g</td>
+                            <td class="bg-delft-50/30 border-l border-delft-100/50 font-mono text-slate-700">4,3 g</td>
+                            <td class="text-right font-mono text-slate-400">-</td>
+                        </tr>
+                        <tr class="table-row-hover transition-colors">
+                            <td class="pl-8 text-slate-400 text-xs italic">waarvan verzadigd</td>
+                            <td class="font-mono text-slate-400 text-xs">3,6 g</td>
+                            <td class="bg-delft-50/30 border-l border-delft-100/50 font-mono text-slate-500 text-xs">2,9 g</td>
+                            <td class="text-right font-mono text-slate-400">-</td>
+                        </tr>
+                        <tr class="table-row-hover transition-colors">
+                            <td class="font-medium">Koolhydraten</td>
+                            <td class="font-mono text-slate-500">16,8 g</td>
+                            <td class="bg-delft-50/30 border-l border-delft-100/50 font-mono text-slate-700">13,4 g</td>
+                            <td class="text-right font-mono text-slate-400">-</td>
+                        </tr>
+                        <tr class="table-row-hover transition-colors">
+                            <td class="pl-8 text-slate-400 text-xs italic">waarvan suikers</td>
+                            <td class="font-mono text-slate-400 text-xs">15,7 g</td>
+                            <td class="bg-delft-50/30 border-l border-delft-100/50 font-mono text-slate-500 text-xs">12,6 g</td>
+                            <td class="text-right font-mono text-slate-400">-</td>
+                        </tr>
+                        <tr class="table-row-hover transition-colors">
+                            <td class="font-medium">Vezels</td>
+                            <td class="font-mono text-slate-500">1,8 g</td>
+                            <td class="bg-delft-50/30 border-l border-delft-100/50 font-mono text-slate-700">1,4 g</td>
+                            <td class="text-right font-mono text-slate-400">-</td>
+                        </tr>
+                        <tr class="bg-slate-50/80">
+                            <td class="font-semibold text-slate-900">Eiwitten (Totaal)</td>
+                            <td class="font-mono font-medium text-delft-700">12,3 g</td>
+                            <td class="bg-delft-100/50 border-l border-delft-200/50 font-mono font-bold text-delft-800">9,8 g</td>
+                            <td class="text-right font-mono text-slate-400">-</td>
+                        </tr>
+                        <tr class="table-row-hover transition-colors">
+                            <td class="font-medium">Zout</td>
+                            <td class="font-mono text-slate-500">0,38 g</td>
+                            <td class="bg-delft-50/30 border-l border-delft-100/50 font-mono text-slate-700">0,30 g</td>
+                            <td class="text-right font-mono text-slate-400">-</td>
+                        </tr>
+                        
+                        <tr class="bg-slate-100/50">
+                            <td colspan="4" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest py-3 pl-5 border-t border-slate-200">Klinische Verrijkingen</td>
+                        </tr>
+                        <tr class="table-row-hover transition-colors">
+                            <td class="font-medium text-slate-900">Creatine Monohydraat</td>
+                            <td class="font-mono text-slate-500">1200 mg</td>
+                            <td class="bg-delft-50/30 border-l border-delft-100/50 font-mono font-semibold text-delft-700">960 mg</td>
+                            <td class="text-right font-mono text-slate-400">-</td>
+                        </tr>
+                        <tr class="table-row-hover transition-colors">
+                            <td class="font-medium text-slate-900">Vitamine D3</td>
+                            <td class="font-mono text-slate-500">8,75 µg</td>
+                            <td class="bg-delft-50/30 border-l border-delft-100/50 font-mono font-medium text-slate-700">7,0 µg</td>
+                            <td class="text-right font-mono text-slate-500 font-medium">175%</td>
+                        </tr>
+                        <tr class="table-row-hover transition-colors">
+                            <td class="font-medium text-slate-900">Vitamine E</td>
+                            <td class="font-mono text-slate-500">12 mg</td>
+                            <td class="bg-delft-50/30 border-l border-delft-100/50 font-mono font-medium text-slate-700">9,6 mg</td>
+                            <td class="text-right font-mono text-slate-500 font-medium">100%</td>
+                        </tr>
+                        <tr class="table-row-hover transition-colors">
+                            <td class="font-medium text-slate-900">Vitamine K2</td>
+                            <td class="font-mono text-slate-500">72,4 µg</td>
+                            <td class="bg-delft-50/30 border-l border-delft-100/50 font-mono font-medium text-slate-700">57,9 µg</td>
+                            <td class="text-right font-mono text-slate-500 font-medium">96,5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-4 text-xs text-slate-400 text-right italic">
+                * Referentie-inname van een gemiddelde volwassene (8400 kJ/2000 kcal)
             </div>
         </div>
     </section>
 
-    <section id="waarom" class="py-24 relative z-10 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <span class="text-delft-600 font-bold tracking-widest text-xs uppercase mb-2 block">Patiëntgroepen</span>
-                <h2 class="text-3xl md:text-5xl font-black text-slate-900">Klinische Toepassingen</h2>
-                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">
-                    Ontwikkeld om specifieke medische uitdagingen aan te pakken met één smakelijke oplossing.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-white border border-slate-200 hover:border-delft-200 hover:shadow-lg transition-all reveal">
-                    <div class="w-12 h-12 bg-delft-50 rounded-xl shadow-sm flex items-center justify-center text-delft-600 mb-6">
-                        <i data-lucide="activity" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Sarcopenie & Frailty</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Effectieve interventie bij spiermassaverlies. De unieke combinatie van <strong>HMB</strong> (remt afbraak) en <strong>Creatine</strong> (geeft energie) is bewezen effectief bij ouderen.
-                    </p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Creatine verbetert ook cognitie</li>
-                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> 12,3g Eiwit per cup</li>
-                    </ul>
-                </div>
-
-                <div class="p-8 rounded-2xl bg-white border border-slate-200 hover:border-delft-200 hover:shadow-lg transition-all reveal delay-100">
-                    <div class="w-12 h-12 bg-delft-50 rounded-xl shadow-sm flex items-center justify-center text-delft-600 mb-6">
-                        <i data-lucide="waves" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Dysfagie (Slikproblemen)</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        De koude prikkel (thermische stimulatie) activeert de slikreflex beter dan kamertemperatuur. De smeuïge ijsstructuur glijdt makkelijk weg en vermindert verslikgevaar.
-                    </p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Thermische stimulatie</li>
-                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> IDDSI Level 4 consistentie</li>
-                    </ul>
-                </div>
-
-                <div class="p-8 rounded-2xl bg-white border border-slate-200 hover:border-delft-200 hover:shadow-lg transition-all reveal delay-200">
-                    <div class="w-12 h-12 bg-delft-50 rounded-xl shadow-sm flex items-center justify-center text-delft-600 mb-6">
-                        <i data-lucide="heart-pulse" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Oncologie & Herstel</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Chemotherapie zorgt vaak voor een metaalsmaak. IJs verdooft de smaakpapillen licht, waardoor voeding weer dragelijk wordt. Verrijkt met antioxidanten (Vitamine E).
-                    </p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Maskeert metaalsmaak</li>
-                        <li class="flex items-center gap-2 text-xs font-bold text-delft-700"><i data-lucide="check" class="w-3 h-3"></i> Vitamine D3 boost (175% RI)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="proeven" class="py-24 bg-white relative overflow-hidden border-t border-slate-200">
-        <div class="max-w-3xl mx-auto px-6 text-center relative z-10 reveal">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Ervaar het verschil in uw zorginstelling</h2>
-            <p class="text-slate-600 mb-8 max-w-lg mx-auto">
-                Wij geloven in persoonlijk contact. Wilt u een proeverij organiseren voor uw team of bewoners? Bel of app ons direct voor een afspraak.
-            </p>
-
-            <div class="bg-white p-2 rounded-2xl shadow-glow border-2 border-delft-300 max-w-lg mx-auto transform hover:scale-[1.01] transition-transform">
-                <div class="flex flex-col sm:flex-row gap-2">
-                    <a href="tel:+31642151479" class="flex-1 px-6 py-4 rounded-xl font-bold text-delft-900 bg-delft-50 hover:bg-delft-100 transition-colors flex items-center justify-center gap-2 group">
-                        <i data-lucide="phone" class="w-5 h-5 text-delft-600 group-hover:scale-110 transition-transform"></i>
-                        Bellen
-                    </a>
-                    
-                    <a href="https://wa.me/31642151479" target="_blank" class="flex-1 px-6 py-4 rounded-xl font-bold text-white bg-delft-900 hover:bg-delft-700 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-delft-900/10 group">
-                        <i data-lucide="message-circle" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
-                        APPEN
-                    </a>
-                </div>
-            </div>
-            
-            <p class="text-xs text-slate-400 mt-4">Of mail direct naar <a href="mailto:mail@skyld.nl" class="underline hover:text-delft-600">mail@skyld.nl</a></p>
-
-            <div class="flex justify-center gap-8 mt-10 text-xs font-bold text-slate-400 uppercase tracking-widest">
-                <span class="flex items-center gap-2"><i data-lucide="package-check" class="w-4 h-4"></i> Gratis Proeverij</span>
-                <span class="flex items-center gap-2"><i data-lucide="snowflake" class="w-4 h-4"></i> Gekoeld Transport</span>
-            </div>
-        </div>
-    </section>
-    
-    <section id="science" class="py-16 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-4xl mx-auto px-6">
-            <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6 border-b border-slate-200 pb-2">Wetenschappelijke Bronnen</h4>
-            <ul class="space-y-4 text-xs text-slate-500">
-                <li id="ref-1" class="flex gap-3">
-                    <span class="font-bold text-delft-600 shrink-0">[1]</span>
-                    <span>
-                        <strong>Deutz, N. E., et al. (2013).</strong> Effect of β-hydroxy-β-methylbutyrate (HMB) on lean body mass during 10 days of bed rest in older adults. <em>Clinical Nutrition</em>.
-                    </span>
-                </li>
-                <li id="ref-2" class="flex gap-3">
-                    <span class="font-bold text-delft-600 shrink-0">[2]</span>
-                    <span>
-                        <strong>Rawson, E. S., et al. (2011).</strong> Low-dose creatine supplementation enhances fatigue resistance in the absence of weight gain. <em>Nutrition</em>.
-                    </span>
-                </li>
-                <li id="ref-3" class="flex gap-3">
-                    <span class="font-bold text-delft-600 shrink-0">[3]</span>
-                    <span>
-                        <strong>EFSA Panel.</strong> Scientific Opinion on the substantiation of health claims related to vitamin D and maintenance of bone and muscle function. <em>EFSA Journal</em>.
-                    </span>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="bg-white py-12 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-wrap justify-center items-center gap-12 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+    <section id="ingredients" class="py-16 bg-white border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6 flex items-center gap-2">
+                <i data-lucide="info" class="w-3.5 h-3.5"></i> Volledige Ingrediëntendeclaratie
+            </h3>
+            <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-delft-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                 
-                <div class="h-20 flex items-center">
-                     <img src="assets/Flag_of_Europe.svg" alt="Europese Unie" class="h-full w-auto">
-                </div>
+                <p class="text-sm leading-relaxed text-slate-700 relative z-10 font-medium">
+                    <span class="text-slate-900 font-bold">Schapenmelk</span> (63,6%), 
+                    <span class="text-slate-900 font-bold">Wei Eiwit Isolaat (Melk)</span> (9,5%), 
+                    Glucose Fructosestroop, 
+                    Suiker, 
+                    <span class="text-slate-900 font-bold">Slagroom</span>, 
+                    Citroensap, 
+                    Plantaardige Vezels (Inuline), 
+                    Dextrose, 
+                    Creatine Monohydraat (1,2%), 
+                    HMB (Calcium β-hydroxy-β-methylbutyraat), 
+                    Magnesium uit Magnesiumoxide (0,2%), 
+                    Johannesbroodpitmeel (verdikkingsmiddel), 
+                    Zuurteregelaar (Citroenzuur), 
+                    Vitamine K2 (Menaquinone-7), 
+                    Vitamine D3 (Cholecalciferol), 
+                    Vitamine E (Tocopherol).
+                </p>
 
-                <div class="h-16 flex items-center">
-                    <img src="assets/Logo_Versnellingsagenda_los_smal_transparant.png.webp" alt="Versnellingsagenda" class="h-full w-auto">
-                </div>
-
-                <div class="h-16 flex items-center">
-                    <img src="assets/SNN_logo_naamvoluit_CMYK_png.png" alt="SNN - Samenwerkingsverband Noord-Nederland" class="h-full w-auto">
+                <div class="mt-8 flex flex-wrap gap-4 pt-6 border-t border-slate-200/60">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-slate-200 rounded-md text-[11px] font-bold text-slate-600 uppercase tracking-wide shadow-sm">
+                        <i data-lucide="alert-circle" class="w-3 h-3 text-delft-500"></i> Bevat Melk
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-slate-200 rounded-md text-[11px] font-bold text-slate-600 uppercase tracking-wide shadow-sm">
+                        <i data-lucide="alert-circle" class="w-3 h-3 text-delft-500"></i> Bevat Lactose
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white border border-slate-200 rounded-md text-[11px] font-bold text-emerald-600 uppercase tracking-wide shadow-sm">
+                        <i data-lucide="check-circle" class="w-3 h-3 text-emerald-500"></i> Glutenvrij
+                    </span>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-white py-12 border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            
-            <div class="flex justify-center items-center gap-2 mb-6 opacity-50 grayscale hover:grayscale-0 transition-all">
-                <div class="w-8 h-8 bg-slate-500 rounded flex items-center justify-center text-white"><i data-lucide="shield" class="w-4 h-4"></i></div>
-                <span class="font-black text-2xl tracking-tighter text-slate-500">SKYLD</span>
+    <section id="claims" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="mb-16 max-w-2xl">
+                <h2 class="text-3xl font-semibold text-slate-900 tracking-tight">Klinisch Substantiatiedossier</h2>
+                <p class="text-slate-500 mt-4 leading-relaxed">Onderbouwing van de actieve ingrediënten gebaseerd op peer-reviewed onderzoek en toegestane gezondheidsclaims (EFSA).</p>
             </div>
 
-            <div class="mb-8 text-sm text-slate-500 leading-relaxed font-medium">
-                <p>Hegedyk 21</p>
-                <p>8405GR Luxwoude</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                
+                <div class="group border border-slate-200 rounded-xl p-8 hover:border-delft-200 hover:shadow-lg hover:shadow-delft-900/5 transition-all duration-300 bg-white">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center ring-1 ring-blue-100 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="zap" class="w-5 h-5 stroke-[1.5]"></i>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 text-lg">Creatine Monohydraat</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="pl-4 border-l-2 border-blue-100">
+                            <p class="text-sm text-slate-700 font-medium">Verbetert fysieke prestaties en ondersteunt spierkracht bij ouderen.</p>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">Verhoogt intramusculaire fosfocreatine voor directe ATP-regeneratie. Recente studies tonen ook cognitieve voordelen bij stress en veroudering.</p>
+                        <div class="pt-2">
+                            <span class="inline-flex items-center text-[10px] text-delft-600 font-mono bg-delft-50 px-2 py-1 rounded">
+                                EFSA Journal 2011;9(7):2303
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group border border-slate-200 rounded-xl p-8 hover:border-purple-200 hover:shadow-lg hover:shadow-purple-900/5 transition-all duration-300 bg-white">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-10 h-10 bg-purple-50 text-purple-600 rounded-lg flex items-center justify-center ring-1 ring-purple-100 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="shield" class="w-5 h-5 stroke-[1.5]"></i>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 text-lg">HMB (Metaboliet)</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="pl-4 border-l-2 border-purple-100">
+                            <p class="text-sm text-slate-700 font-medium">Remt spierafbraak (anti-catabool) en bevordert herstel.</p>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">Directe activatie van de mTOR-pathway (eiwitsynthese) en remming van de ubiquitine-proteasoom route (afbraak).</p>
+                        <div class="pt-2">
+                            <span class="inline-flex items-center text-[10px] text-purple-600 font-mono bg-purple-50 px-2 py-1 rounded">
+                                Deutz et al. (Clinical Nutrition 2013)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group border border-slate-200 rounded-xl p-8 hover:border-amber-200 hover:shadow-lg hover:shadow-amber-900/5 transition-all duration-300 bg-white">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-10 h-10 bg-amber-50 text-amber-600 rounded-lg flex items-center justify-center ring-1 ring-amber-100 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="sun" class="w-5 h-5 stroke-[1.5]"></i>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 text-lg">Synergie D3 + K2</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="pl-4 border-l-2 border-amber-100">
+                            <p class="text-sm text-slate-700 font-medium">Essentieel voor botgezondheid en calciummetabolisme.</p>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">Vitamine D3 verhoogt calciumopname uit voeding. Vitamine K2 activeert osteocalcine, wat zorgt dat calcium in de botten belandt i.p.v. de bloedvaten.</p>
+                        <div class="pt-2">
+                            <span class="inline-flex items-center text-[10px] text-amber-600 font-mono bg-amber-50 px-2 py-1 rounded">
+                                EFSA Article 13.1 Claim ID 118
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group border border-slate-200 rounded-xl p-8 hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-900/5 transition-all duration-300 bg-white">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center ring-1 ring-emerald-100 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="activity" class="w-5 h-5 stroke-[1.5]"></i>
+                        </div>
+                        <h3 class="font-semibold text-slate-900 text-lg">Magnesium</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="pl-4 border-l-2 border-emerald-100">
+                            <p class="text-sm text-slate-700 font-medium">Draagt bij aan normale werking van spieren en vermindering van vermoeidheid.</p>
+                        </div>
+                        <p class="text-xs text-slate-500 leading-relaxed">Co-factor in meer dan 300 enzymatische processen, waaronder eiwitsynthese en elektrolytenbalans.</p>
+                        <div class="pt-2">
+                            <span class="inline-flex items-center text-[10px] text-emerald-600 font-mono bg-emerald-50 px-2 py-1 rounded">
+                                EFSA Journal 2010;8(10):1807
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-slate-900 text-slate-400 py-20 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
+        <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-delft-900/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="bg-slate-800/50 border border-slate-700/50 p-10 rounded-2xl flex flex-col lg:flex-row items-center justify-between gap-10 backdrop-blur-sm">
+                <div class="max-w-md">
+                    <h4 class="text-white font-semibold mb-3 text-xl tracking-tight">Professioneel Proefpakket</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">Kosteloos beschikbaar voor diëtisten en instellingsmanagers in de zorg. Wij leveren gekoeld tot aan de afdeling.</p>
+                </div>
+                
+                <form class="flex w-full lg:w-auto flex-col sm:flex-row gap-3">
+                    <input type="email" placeholder="Werk e-mailadres" class="px-5 py-3.5 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder:text-slate-600 focus:border-delft-500 focus:ring-1 focus:ring-delft-500 focus:outline-none min-w-[280px] text-sm transition-all">
+                    <button class="px-8 py-3.5 bg-delft-600 hover:bg-delft-500 text-white font-semibold rounded-lg transition-all shadow-lg shadow-delft-900/50 text-sm whitespace-nowrap">
+                        Aanvragen
+                    </button>
+                </form>
             </div>
 
-            <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">&copy; 2026 SKYLD MEDICAL B.V.</p>
+            <div class="mt-16 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest pt-8 border-t border-slate-800 gap-6">
+                <span class="text-slate-500">© 2026 SKYLD Medical B.V.</span>
+                <div class="flex gap-8">
+                     <a href="#" class="text-slate-500 hover:text-white transition-colors">HACCP</a>
+                     <a href="#" class="text-slate-500 hover:text-white transition-colors">Privacy Policy</a>
+                     <a href="#" class="text-slate-500 hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Start altijd bovenaan bij refresh
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-        }
-        if (history.scrollRestoration) {
-            history.scrollRestoration = 'manual';
-        }
-
         lucide.createIcons();
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
+
 </body>
 </html>
